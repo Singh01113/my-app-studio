@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Administration' if admin_username else 'Admin access required' }} · {{ brand.name }}{% endblock %}
+{% block content %}
+<section class="member-panel" aria-labelledby="admin-title">
+  <p class="eyebrow">ShiftBoard</p>
+  {% if admin_username %}
+  <h1 id="admin-title">Administration</h1>
+  <p class="lede">Administrator access confirmed.</p>
+  <div class="panel account-details">
+    <h2>Your administrator account</h2>
+    <dl><dt>Username</dt><dd>{{ admin_username }}</dd></dl>
+    <p>You have access to this administrator-only space.</p>
+  </div>
+  {% else %}
+  <h1 id="admin-title">Admin access required</h1>
+  <p class="lede">This space is available to administrators. Your member space is still available.</p>
+  {% endif %}
+  <p><a class="button" href="/dashboard">Return to member space</a></p>
+</section>
+{% endblock %}

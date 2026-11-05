@@ -102,5 +102,5 @@ def test_private_pages_and_identity_do_not_expose_session_id(client):
     dashboard = client.get("/dashboard")
     assert dashboard.headers["cache-control"] == "no-store"
     assert PASSWORD not in dashboard.text
-    assert client.get("/admin").status_code == 404
-    assert client.get("/api/admin").status_code == 404
+    assert client.get("/admin").status_code == 403
+    assert client.get("/api/admin").status_code == 403
