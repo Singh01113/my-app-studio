@@ -1,16 +1,20 @@
 {
-  "name": "Your Project",
-  "audience": "Not chosen yet",
-  "archetype": "Not chosen yet",
-  "promise": "Not chosen yet",
-  "headline": "A small idea. A real application.",
-  "summary": "This working page is your starting point. Give it a purpose and a brand, then build accounts and permissions one feature at a time.",
-  "voice": ["Not chosen yet"],
-  "design_direction": "Not chosen yet",
+  "name": "ShiftBoard",
+  "audience": "Small-business owners, managers, and employees",
+  "archetype": "Caregiver — approachable, supportive, and reliable",
+  "promise": "Keep workplace communication simple, organized, and accessible",
+  "headline": "Keep your team in the loop",
+  "summary": "For small-business owners, managers, and employees who want a clearer way to communicate and stay organized.",
+  "voice": [
+    "Approachable",
+    "Supportive",
+    "Reliable"
+  ],
+  "design_direction": "Forest green, warm white, clean typography, and a modern professional layout.",
   "palette": {
-    "ink": "#182C34",
-    "paper": "#F6F5EF",
-    "accent": "#285A50",
+    "ink": "#18382D",
+    "paper": "#FAF8F2",
+    "accent": "#235C45",
     "surface": "#FFFFFF"
   }
 }

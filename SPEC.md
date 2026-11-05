@@ -7,9 +7,9 @@ actual evidence; pending is a valid state. Keep explanations/help in
 ## Current stage
 
 - **Current feature:** APP-001.
-- **Status:** Neutral foundation; learner scope and decisions pending.
-- **Next step:** Confirm the local clone and SSH origin, run setup and try the page.
-- **Implementation marker:** `studio.json` starts at `implemented_through: 0`.
+- **Status:** Learner chose Keep for the revised APP-001 homepage; final full APP-001 checks and AI diff review passed. Learner approved the learning excerpts; GitHub completion pending.
+- **Next step:** Show final Git changes and credential/scope review before the commit/push/PR checkpoint.
+- **Implementation marker:** `studio.json` now declares `implemented_through: 1` after the full cumulative APP-001 checks passed. This marks checked implementation, not lesson completion.
 
 This repository owns application code. Server/proxy changes and production
 deployment are outside these three local-development lessons. Prepared helpers
@@ -23,15 +23,23 @@ Keep account actions honest about their unfinished state.
 
 | Decision | Agreement |
 |---|---|
-| Visitor and concrete use situation | Pending |
-| Reused IS117 brand, or name / promise / primary archetype | Pending |
-| One visible choice and visitor benefit | Pending |
-| Own issue / branch / PR | Pending |
+| Visitor and concrete use situation | Small-business owners, managers, and employees visiting to understand how ShiftBoard aims to help them communicate and stay organized. |
+| Reused IS117 brand, or name / promise / primary archetype | ShiftBoard; “Keep workplace communication simple, organized, and accessible”; Caregiver (approachable, supportive, reliable). Tagline: “Keep your team in the loop.” |
+| One visible choice and visitor benefit | Forest green, warm white, clean typography, and a modern professional layout; learner expects a welcoming, trustworthy impression and clearer understanding of the purpose. |
+| Own issue / branch / PR | [Issue #1](https://github.com/Singh01113/my-app-studio/issues/1) (learner supplied); local branch `feature/app-001-shiftboard` verified. PR not created. |
 
 **Keep when:** the agreed identity is visible and usable at desktop/narrow widths;
 full foundation + APP-001 checks pass; AI review and the learner's actual check
 interpretation/browser observation/keep reason are recorded; reviewed evidence
 and verified GitHub state are linked below.
+
+### Local implementation
+
+- `app/brand.json`: agreed identity, copy, voice, and shared color tokens.
+- `app/static/logo.svg`: original conversation-board mark; `app/static/site.css`: responsive layout, visible keyboard focus, and reduced-motion support.
+- `app/templates/base.html` and `home.html`: ShiftBoard wordmark, tagline, purpose, design principles, in-page navigation, and an explicit notice that accounts and team tools are unavailable.
+- Learner-requested revision: content maximum width increased from 1080px to 1240px; larger body, navigation, supporting text, and headings; rebalanced section spacing. Mobile stacking, focus styles, and reduced-motion support retained.
+- Supporting homepage copy and mark are AI-drafted from the approved brief. No account or role routes were implemented.
 
 ## APP-002 · Signup, login and logout
 
@@ -81,9 +89,13 @@ customer research or claims that a timestamp proves learning.
 
 | Feature | Files / own issue / PR | Actual checks and learner observations | Kept / GitHub state |
 |---|---|---|---|
-| APP-001 | Pending | Not run; learner contributions pending | Pending |
+| APP-001 | Files above; Issue #1; no PR | Final `python3 studio.py check --lesson APP-001`: Black/Pylint passed; 98 foundation, 2 APP-001 contract, and 2 Chromium tests passed. Revised desktop/narrow visual review and keyboard/navigation checks passed as detailed below. Learner observation, prediction, check interpretation, revision feedback, and final Keep reason drafted in LEARNING.md. | Local only; learner chose Keep after reviewing the revision; learning excerpts approved; GitHub completion pending |
 | APP-002 | Pending | Unfinished; explicit contracts not yet passed | Pending |
 | APP-003 | Pending | Unfinished; explicit contracts not yet passed | Pending |
 
 The instructor's reference branches show possible implementations. They do not
 establish this repository's completion or the learner's own reasoning.
+
+Check note: the prepared dependencies emit a Starlette/httpx deprecation warning; it did not fail the checks. These results do not establish full accessibility or security.
+
+Revision validation: `python3 studio.py check` passed Black, Pylint, 98 foundation tests, 2 APP-001 contracts, and 2 real Chromium tests. AI inspected 1920px/390px screenshots and measured no horizontal overflow at 320, 390, 768, 1440, and 1920px. Skip-link focus, purpose navigation, and reduced-motion behavior passed. The existing dependency deprecation warning remains.
