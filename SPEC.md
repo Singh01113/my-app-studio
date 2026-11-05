@@ -6,9 +6,9 @@ actual evidence; pending is a valid state. Keep explanations/help in
 
 ## Current stage
 
-- **Current feature:** APP-001.
-- **Status:** Learner chose Keep for the revised APP-001 homepage; final full APP-001 checks and AI diff review passed. Learner approved the learning excerpts; GitHub completion pending.
-- **Next step:** Show final Git changes and credential/scope review before the commit/push/PR checkpoint.
+- **Current feature:** APP-002.
+- **Status:** APP-001 merged and verified. APP-002 scope and prediction agreed; issue and local feature branch created; implementation not started.
+- **Next step:** Review the APP-002 plan and new learning excerpt before application changes.
 - **Implementation marker:** `studio.json` now declares `implemented_through: 1` after the full cumulative APP-001 checks passed. This marks checked implementation, not lesson completion.
 
 This repository owns application code. Server/proxy changes and production
@@ -26,7 +26,7 @@ Keep account actions honest about their unfinished state.
 | Visitor and concrete use situation | Small-business owners, managers, and employees visiting to understand how ShiftBoard aims to help them communicate and stay organized. |
 | Reused IS117 brand, or name / promise / primary archetype | ShiftBoard; “Keep workplace communication simple, organized, and accessible”; Caregiver (approachable, supportive, reliable). Tagline: “Keep your team in the loop.” |
 | One visible choice and visitor benefit | Forest green, warm white, clean typography, and a modern professional layout; learner expects a welcoming, trustworthy impression and clearer understanding of the purpose. |
-| Own issue / branch / PR | [Issue #1](https://github.com/Singh01113/my-app-studio/issues/1) (learner supplied); local branch `feature/app-001-shiftboard` verified. PR not created. |
+| Own issue / branch / PR | [Issue #1](https://github.com/Singh01113/my-app-studio/issues/1) (learner supplied); local branch `feature/app-001-shiftboard` verified. [PR #2](https://github.com/Singh01113/my-app-studio/pull/2) merged as e28bf5c; Issue #1 closed. |
 
 **Keep when:** the agreed identity is visible and usable at desktop/narrow widths;
 full foundation + APP-001 checks pass; AI review and the learner's actual check
@@ -45,13 +45,13 @@ and verified GitHub state are linked below.
 
 **Scope:** add browser forms and REST behavior for member signup, login, a private
 dashboard and logout backed by SQLite. Reuse the prepared password/JWT/CSRF/session
-helpers; keep data local. New accounts cannot choose their role.
+helpers; keep data local. New accounts cannot choose their role. Preserve ShiftBoard branding and responsive layout. Employee/business records, APP-003, and deployment remain outside this scope.
 
 | Decision | Agreement |
 |---|---|
-| Expected public/private behavior and account flow | Pending |
-| Valid and rejected cases to demonstrate | Pending |
-| Own issue / branch / PR | Pending |
+| Expected public/private behavior and account flow | Preserve ShiftBoard branding. Signup/login forms and REST routes share SQLite/security helpers. Dashboard redirects to login before authentication and after logout; authenticated users see their own account information. API identity requests return 401 before login and 200 after login. |
+| Valid and rejected cases to demonstrate | Valid signup/login/dashboard/logout; reject duplicate or invalid signup, role input, wrong credentials, missing/invalid CSRF, and revoked/expired sessions. Use prepared hashing, signed expiring JWTs, HttpOnly cookies, input limits, throttling, and server-side revocation. Throwaway local accounts only. |
+| Own issue / branch / PR | [Issue #3](https://github.com/Singh01113/my-app-studio/issues/3); codex/app-002-shiftboard; PR pending. |
 
 **Keep when:** the agreed forms/API work; duplicate/invalid signup and wrong
 credentials are rejected; passwords are hashed; authentication uses validated,
@@ -89,8 +89,8 @@ customer research or claims that a timestamp proves learning.
 
 | Feature | Files / own issue / PR | Actual checks and learner observations | Kept / GitHub state |
 |---|---|---|---|
-| APP-001 | Files above; Issue #1; no PR | Final `python3 studio.py check --lesson APP-001`: Black/Pylint passed; 98 foundation, 2 APP-001 contract, and 2 Chromium tests passed. Revised desktop/narrow visual review and keyboard/navigation checks passed as detailed below. Learner observation, prediction, check interpretation, revision feedback, and final Keep reason drafted in LEARNING.md. | Local only; learner chose Keep after reviewing the revision; learning excerpts approved; GitHub completion pending |
-| APP-002 | Pending | Unfinished; explicit contracts not yet passed | Pending |
+| APP-001 | Files above; Issue #1; [PR #2](https://github.com/Singh01113/my-app-studio/pull/2) | Final `python3 studio.py check --lesson APP-001`: Black/Pylint passed; 98 foundation, 2 APP-001 contract, and 2 Chromium tests passed. Revised desktop/narrow visual review and keyboard/navigation checks passed as detailed below. Learner observation, prediction, check interpretation, revision feedback, and final Keep reason drafted in LEARNING.md. | Kept and merged; Issue #1 closed; check and windows passed on feature and merged main, verified through GitHub browser/API |
+| APP-002 | Issue #3; codex/app-002-shiftboard; implementation not started | Prediction drafted; APP-002 checks not run | Pending |
 | APP-003 | Pending | Unfinished; explicit contracts not yet passed | Pending |
 
 The instructor's reference branches show possible implementations. They do not

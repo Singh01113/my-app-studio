@@ -5,7 +5,7 @@ short words or labeled paraphrases; disclose help and leave missing responses
 pending. The learner reviews, corrects or removes new excerpts before commit/push.
 Accuracy approval is not proof of understanding. Label simulated trials explicitly.
 
-**Available conversation context:** This chat includes local setup, the learner’s initial preview observation, brand choices, scope approval, prediction, implementation authorization, check interpretation, branded-page observation, Revise decision, final revised-page observation, and Keep decision. No earlier coursework or conversations are available.
+**Available conversation context:** This chat includes local setup, the learner’s initial preview observation, brand choices, scope approval, prediction, implementation authorization, check interpretation, branded-page observation, Revise decision, final revised-page observation, and Keep decision. APP-002 context includes scope approval and the learner’s prediction and rationale. No earlier coursework or conversations are available.
 
 ## APP-001
 
@@ -19,13 +19,13 @@ Accuracy approval is not proof of understanding. Label simulated trials explicit
 
 ## APP-002
 
-- Prediction: Pending.
+- Prediction: Learner paraphrase: Before login, visitors should be redirected to login instead of seeing the private dashboard. After successful login, users should see their dashboard and account information. After logout, the session should end and dashboard access should require login again. This matters to the learner because ShiftBoard needs to protect employee and business information from unauthorized users.
 - Check interpretation: Pending.
 - Browser observation: Pending.
 - Keep decision: Pending.
-- Review: Pending.
-- Help/gaps: Pending.
-- Evidence links / next step: Keep APP-001 before agreeing this lesson.
+- Review: Pending. New APP-002 excerpts await accuracy/removal review before commit or push.
+- Help/gaps: Learner agreed to the proposed scope and supplied the prediction and rationale. AI reviewed the prepared lesson/helpers, proposed the scope, created the prepared issue and local branch, and drafted this paraphrase. No application code changed. Actual checks, check interpretation, browser observation, and Keep/revise decision remain pending. This lesson adds account/session behavior, not employee or business records.
+- Evidence links / next step: [Issue #3](https://github.com/Singh01113/my-app-studio/issues/3); local branch codex/app-002-shiftboard. Review the implementation plan before application changes.
 
 ## APP-003
 
