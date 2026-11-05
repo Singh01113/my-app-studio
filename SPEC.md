@@ -7,9 +7,9 @@ actual evidence; pending is a valid state. Keep explanations/help in
 ## Current stage
 
 - **Current feature:** APP-002.
-- **Status:** APP-001 merged and verified. APP-002 scope and prediction agreed; issue and local feature branch created; implementation not started.
-- **Next step:** Review the APP-002 plan and new learning excerpt before application changes.
-- **Implementation marker:** `studio.json` now declares `implemented_through: 1` after the full cumulative APP-001 checks passed. This marks checked implementation, not lesson completion.
+- **Status:** APP-001 merged and verified. APP-002 implemented locally; full cumulative checks and AI browser review passed. Learner completed their browser test and chose Keep; test interpretation and record approval recorded; commit/push/PR authorized, GitHub CI review and merge pending.
+- **Next step:** Commit and push the approved APP-002 files, open a PR linked to Issue #3, and review both CI jobs. Do not merge without authorization.
+- **Implementation marker:** `studio.json` now declares `implemented_through: 2` after the full cumulative APP-002 checks passed. This marks checked implementation, not lesson completion.
 
 This repository owns application code. Server/proxy changes and production
 deployment are outside these three local-development lessons. Prepared helpers
@@ -59,6 +59,15 @@ expiring JWTs with protected cookies and CSRF; private requests require a live
 session and logout revokes it. Full cumulative checks, AI review, actual learner
 contributions and GitHub state are recorded. This is not a production-security certification.
 
+### APP-002 local implementation and checks
+
+- app/features/accounts.py connects GET /api/csrf, POST /api/signup, POST /api/login, GET /api/me, and POST /api/logout to the existing security helpers. Browser GET/POST signup/login, protected GET dashboard, and POST logout use the same services.
+- app/templates/account.html, dashboard.html, and account_error.html provide branded forms, current-account information, and recoverable errors. Password fields are never repopulated. Homepage availability copy now links to working account pages; api.html maps the routes. Account CSS preserves the shared logo, colors, and typography.
+- tests/test_accounts.py adds route-level coverage for extra/duplicate fields, GET/CSRF logout rejection, expired/tampered JWTs, expired database sessions, public-only identity output, and unchanged admin-route absence. Existing helpers and acceptance contracts remain unchanged.
+- Final full cumulative APP-002 rerun after the learner’s Keep report passed Black/Pylint, 106 foundation/regression tests, 14 cumulative contracts, and 2 Chromium tests. AI used an isolated temporary database for visual review: signup/login/dashboard at 1440, 390, and 320px had no horizontal overflow; inspected screenshots were legible. Wrong-login recovery, keyboard skip focus, logout, and denied dashboard revisit passed. API identity returned 200 while logged in, 401 after logout, and 401 when replaying a copied logged-out session.
+- Final diff/security review found no blocking issue in the scoped account implementation. Prepared security/database helpers, schemas, brand/logo, and role source remain unchanged. No credential-pattern matches were found in changed/new files; test passphrase/key literals are disposable fixtures, and runtime data remains ignored.
+- These are AI checks and observations, not the learner’s browser evidence. Learner separately reported successful signup/login/dashboard/logout and a redirect to login on a logged-out dashboard request, then chose Keep. Learner interpreted the copied-cookie replay test. Records approved; GitHub CI review and merge remain pending. No production or APP-003 features added.
+
 ## APP-003 · Server-enforced roles
 
 **Scope:** enforce a small member/admin boundary in the API and browser. Assign
@@ -90,7 +99,7 @@ customer research or claims that a timestamp proves learning.
 | Feature | Files / own issue / PR | Actual checks and learner observations | Kept / GitHub state |
 |---|---|---|---|
 | APP-001 | Files above; Issue #1; [PR #2](https://github.com/Singh01113/my-app-studio/pull/2) | Final `python3 studio.py check --lesson APP-001`: Black/Pylint passed; 98 foundation, 2 APP-001 contract, and 2 Chromium tests passed. Revised desktop/narrow visual review and keyboard/navigation checks passed as detailed below. Learner observation, prediction, check interpretation, revision feedback, and final Keep reason drafted in LEARNING.md. | Kept and merged; Issue #1 closed; check and windows passed on feature and merged main, verified through GitHub browser/API |
-| APP-002 | Issue #3; codex/app-002-shiftboard; implementation not started | Prediction drafted; APP-002 checks not run | Pending |
+| APP-002 | [Issue #3](https://github.com/Singh01113/my-app-studio/issues/3); codex/app-002-shiftboard; files above | Full cumulative check and AI browser review passed; learner prediction, copied-cookie interpretation, and actual account-flow observation recorded | Learner chose Keep; local changes only; records approved; PR/CI/merge pending |
 | APP-003 | Pending | Unfinished; explicit contracts not yet passed | Pending |
 
 The instructor's reference branches show possible implementations. They do not

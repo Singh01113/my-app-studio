@@ -5,7 +5,7 @@ short words or labeled paraphrases; disclose help and leave missing responses
 pending. The learner reviews, corrects or removes new excerpts before commit/push.
 Accuracy approval is not proof of understanding. Label simulated trials explicitly.
 
-**Available conversation context:** This chat includes local setup, the learner’s initial preview observation, brand choices, scope approval, prediction, implementation authorization, check interpretation, branded-page observation, Revise decision, final revised-page observation, and Keep decision. APP-002 context includes scope approval and the learner’s prediction and rationale. No earlier coursework or conversations are available.
+**Available conversation context:** This chat includes local setup, the learner’s initial preview observation, brand choices, scope approval, prediction, implementation authorization, check interpretation, branded-page observation, Revise decision, final revised-page observation, and Keep decision. APP-002 context includes scope approval, prediction and rationale, implementation approval, and the learner’s own account-flow browser report, Keep decision, and copied-cookie test interpretation. No earlier coursework or conversations are available.
 
 ## APP-001
 
@@ -20,12 +20,12 @@ Accuracy approval is not proof of understanding. Label simulated trials explicit
 ## APP-002
 
 - Prediction: Learner paraphrase: Before login, visitors should be redirected to login instead of seeing the private dashboard. After successful login, users should see their dashboard and account information. After logout, the session should end and dashboard access should require login again. This matters to the learner because ShiftBoard needs to protect employee and business information from unauthorized users.
-- Check interpretation: Pending.
-- Browser observation: Pending.
-- Keep decision: Pending.
-- Review: Pending. New APP-002 excerpts await accuracy/removal review before commit or push.
-- Help/gaps: Learner agreed to the proposed scope and supplied the prediction and rationale. AI reviewed the prepared lesson/helpers, proposed the scope, created the prepared issue and local branch, and drafted this paraphrase. No application code changed. Actual checks, check interpretation, browser observation, and Keep/revise decision remain pending. This lesson adds account/session behavior, not employee or business records.
-- Evidence links / next step: [Issue #3](https://github.com/Singh01113/my-app-studio/issues/3); local branch codex/app-002-shiftboard. Review the implementation plan before application changes.
+- Check interpretation: Learner paraphrase: Deleting only the browser cookie could leave a copied session cookie usable to access private dashboard or account information. The server must invalidate the session so the copy cannot be reused after logout. The observed 401 Unauthorized response shows that the server rejected the old session in this test.
+- Browser observation: Learner paraphrase: Created the throwaway test account shiftboard_test1 and was redirected to login. After logging in, the private dashboard displayed the username and member account type. Logout returned to login with a confirmation. Manually requesting /dashboard while logged out redirected to /login without showing private information.
+- Keep decision: Keep. Learner quote: “I am satisfied with the authentication features and want to keep this implementation.” The learner reported successfully completing signup, login, dashboard access, logout, and a denied dashboard revisit.
+- Review: Learner reviewed and approved the final APP-002 documentation, interpretation, and AI assistance summary as accurate, with no corrections or removals requested. This is record accuracy approval, not an independent assessment.
+- Help/gaps: Learner agreed to the proposed scope and supplied the prediction and rationale. AI reviewed the prepared lesson/helpers, proposed the scope, created the prepared issue and local branch, and drafted this paraphrase. Learner authorized implementation after reporting planning commit 4a9e499; AI verified that commit and the clean feature branch. AI implemented account forms/API routes using the prepared helpers, added regression tests, fixed malformed-form error handling identified by those tests, and ran the full checks and isolated browser review. AI explained password hashing, signed versus encrypted JWTs, and server-side revocation. Learner independently tested the account flow and chose Keep. AI recorded that report separately from its own browser review. After AI showed the copied-cookie replay test and followed up with a prompt about cookie deletion versus server revocation, the learner explained the remaining access risk and interpreted the observed 401 response. Learner approved the 11 reviewed files and authorized commit, push, and a PR linked to Issue #3. GitHub CI review and merge remain pending; no merge authorized. This lesson adds account/session behavior, not employee or business records.
+- Evidence links / next step: [Issue #3](https://github.com/Singh01113/my-app-studio/issues/3); local branch codex/app-002-shiftboard. Final full cumulative APP-002 check rerun after the learner’s Keep report passed: Black/Pylint, 106 foundation/regression tests, 14 contracts, and 2 Chromium tests. AI observed a successful account journey and logout/replay rejection in an isolated database. Next: create the authorized commit and PR, then review both GitHub CI jobs before any merge.
 
 ## APP-003
 

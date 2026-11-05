@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Try again · {{ brand.name }}{% endblock %}
+{% block content %}
+<section class="account-panel form-stack">
+  <h1>Let's try that again.</h1>
+  <p role="alert">{{ error }}</p>
+  <p>Your request was not completed. Open your member space to get a fresh form.</p>
+  <a class="button" href="/dashboard">Return to member space</a>
+</section>
+{% endblock %}

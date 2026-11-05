@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Create account' if signup else 'Log in' }} · {{ brand.name }}{% endblock %}
+{% block content %}
+<section class="account-panel form-stack" aria-labelledby="account-title">
+  <p class="eyebrow">{{ 'Welcome to ShiftBoard' if signup else 'Welcome back' }}</p>
+  <h1 id="account-title">{{ 'Create account' if signup else 'Log in' }}</h1>
+  <p>{{ 'A simple first step toward your own member space.' if signup else 'Your member space is a sign-in away.' }}</p>
+  {% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+  {% if not signup and request.query_params.get('created') == '1' %}<p class="notice" role="status">Account created. Log in to continue.</p>{% endif %}
+  {% if not signup and request.query_params.get('logged_out') == '1' %}<p class="notice" role="status">You are logged out.</p>{% endif %}
+  <form method="post" action="{{ '/signup' if signup else '/login' }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" value="{{ username|default('') }}" required minlength="{{ 3 if signup else 1 }}" maxlength="32" autocomplete="username" autocapitalize="none" spellcheck="false" aria-describedby="username-help">
+    <p class="field-help" id="username-help">{{ 'Use 3–32 letters, numbers, or underscores. Usernames are not case-sensitive.' if signup else 'Enter the username you signed up with.' }}</p>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" required minlength="{{ 15 if signup else 1 }}" maxlength="128" autocomplete="{{ 'new-password' if signup else 'current-password' }}" aria-describedby="password-help">
+    <p class="field-help" id="password-help">{{ 'Use 15–128 characters. A long, unique passphrase works well.' if signup else 'Enter your password. You can paste from a password manager.' }}</p>
+    <button class="button" type="submit">{{ 'Create account' if signup else 'Log in' }}</button>
+  </form>
+  <p class="account-switch">{% if signup %}Already have an account? <a href="/login">Log in</a>{% else %}New to ShiftBoard? <a href="/signup">Create an account</a>{% endif %}</p>
+</section>
+{% endblock %}

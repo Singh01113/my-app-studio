@@ -27,7 +27,8 @@
 <section id="next" class="panel" aria-labelledby="next-title">
   <p class="eyebrow">Availability</p>
   <h2 id="next-title">A first look at ShiftBoard.</h2>
-  <p>This is our homepage preview. Signup, login, and team communication tools are not available yet.</p>
+  <p>Create an account, log in, and visit your private member space. Team communication tools are not available yet.</p>
+  <p>{% if current_user %}<a class="text-link" href="/dashboard">Go to your member space →</a>{% else %}<a class="text-link" href="/signup">Create an account →</a> or <a href="/login">log in</a>.{% endif %}</p>
   <a class="text-link" href="#idea">Explore our purpose <span aria-hidden="true">↑</span></a>
 </section>
 {% endblock %}
