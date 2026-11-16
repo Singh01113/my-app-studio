@@ -120,3 +120,12 @@ establish this repository's completion or the learner's own reasoning.
 Check note: the prepared dependencies emit a Starlette/httpx deprecation warning; it did not fail the checks. These results do not establish full accessibility or security.
 
 Revision validation: `python3 studio.py check` passed Black, Pylint, 98 foundation tests, 2 APP-001 contracts, and 2 real Chromium tests. AI inspected 1920px/390px screenshots and measured no horizontal overflow at 320, 390, 768, 1440, and 1920px. Skip-link focus, purpose navigation, and reduced-motion behavior passed. The existing dependency deprecation warning remains.
+
+## Individual Review 1 — Plan record
+
+The separately scoped portfolio and Cybersecurity Knowledge Assistant Plan is in
+[the combined individual project record](docs/projects/individual.md). It contains
+AI-assisted provisional decisions, original research sources, planned checks and
+actual local regression results. This documentation scope does not implement RAG,
+change the completed Studio application or authorize deployment. Historical Studio
+records above are preserved; current Git evidence is distinguished in the new record.

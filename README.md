@@ -1,5 +1,9 @@
 # IS373 App Studio
 
+[**Individual Portfolio + RAG — Review 1 Plan and research-review index**](docs/projects/individual.md)
+
+The individual Plan record is separate from the completed Studio application lessons below.
+
 **Build a small web application with an AI coach—and understand why it works.**
 Start with a working, neutral FastAPI page. Give it a brand, add accounts, then
 enforce member/admin permissions. Each lesson ends with a visible result, actual
