@@ -42,7 +42,7 @@ individual work. Confirm the wording against Canvas before submitting.
 <a id="portfolio-build"></a>
 ### Review 2 Build — implemented and hosted
 
-**Live URL:** [Amman Singh portfolio](https://amman-app.134-209-120-185.sslip.io/portfolio). **Repository:** [my-app-studio](https://github.com/Singh01113/my-app-studio). Publication branch: `codex/review-2-build`; commit/push/PR and current CI verification are pending at this record update.
+**Live URL:** [Amman Singh portfolio](https://amman-app.134-209-120-185.sslip.io/portfolio). **Repository:** [my-app-studio](https://github.com/Singh01113/my-app-studio). Publication branch: `codex/review-2-build`; application commit `e075063`. [PR #8](https://github.com/Singh01113/my-app-studio/pull/8) is open and intentionally unmerged because generation remains incomplete. [GitHub checks](https://github.com/Singh01113/my-app-studio/pull/8/checks) are running at this record update; consult their latest result before merging.
 
 Implemented a public single-page portfolio with introduction, anchored Work/About/Skills/Contact navigation, responsive project cards and a verified GitHub contact link. No resume, email, LinkedIn, employment or credential was invented. The portfolio is separate from ShiftBoard at `/`; existing account/admin routes remain intact.
 
@@ -59,7 +59,7 @@ These are genuine hosted browser renders of this implementation; [browser check 
 
 **Checked:** Public TLS-verified GET `/portfolio` returned 200 on November 17. The full `python3 studio.py check` passed Black, Pylint, **114 regression tests + 18 APP-001–003 contracts + 3 Chromium journeys = 135 tests**. [Local check output](../evidence/review2/check-results.txt) records the real run. The account and role source files were not modified. Original-page source links were reused from the verified Plan; future employer vacancy status is not implied.
 
-**Next:** Publish this branch and open the review PR; inspect its current CI. Ask a real peer to identify the target role and find evidence for one skill; record their actual feedback and any change/retest here. Post-deployment restart and service-preservation checks subsequently passed; see the technical section. Do not claim that hosting checks prove every link or accessibility requirement.
+**Next:** Open the review PR and inspect its current CI. Ask a real peer to identify the target role and find evidence for one skill; record their actual feedback and any change/retest here. Post-deployment restart and service-preservation checks subsequently passed; see the technical section. Do not claim that hosting checks prove every link or accessibility requirement.
 
 ### Review 1 Plan evidence (retained)
 
@@ -310,7 +310,7 @@ Replaced the proposed Chroma service with **SQLite + sqlite-vec exact vector sea
 
 **Checked:** Hosted import/source counts and Q1–Q5 traces, local repeat/reopen tests, 135 regressions/contracts/browser checks, layout screenshots, and local baseline/design comparisons. Hosted restart and existing-service preservation are verified. No LLM generation, backup restore, current remote CI, or independent peer observation is claimed.
 
-**Next:** Obtain an approved generation endpoint or separately resourced local model (never paste a key into chat), implement and evaluate real generation/citation validation; publish/review the branch and verify CI; obtain real peer feedback and record a change/retest. The Build remains incomplete specifically for generation and the remaining publication/review items.
+**Next:** Obtain an approved generation endpoint or separately resourced local model (never paste a key into chat), implement and evaluate real generation/citation validation; review PR #8 and verify its latest CI; obtain real peer feedback and record a change/retest. The Build remains incomplete specifically for generation and the remaining review items.
 
 ### Review 1 Plan evidence (retained)
 

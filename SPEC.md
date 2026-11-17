@@ -140,7 +140,10 @@ remain intact. New routes: `/portfolio`, `/assistant`, `/api/knowledge/sources`,
 The implementation follows the existing [individual record](docs/projects/individual.md#rag-build),
 with a documented capacity-driven change from Chroma to SQLite/sqlite-vec and
 quantized MiniLM ONNX embeddings. Public answers are labeled extractive; no LLM
-is configured. The public HTTPS foundation is live, but generation, branch publication, PR/CI and peer feedback remain pending.
+is configured. The public HTTPS foundation is live and application commit `e075063` is published on
+`codex/review-2-build`. [PR #8](https://github.com/Singh01113/my-app-studio/pull/8)
+is open and unmerged. CI is running at this record update; generation and real peer
+feedback remain incomplete.
 Hosted restart preserved all 5 documents/26 chunks; all five existing containers
 retained their identities, start times, restart counts and published ports.
 

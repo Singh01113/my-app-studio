@@ -21,7 +21,7 @@
       "unchanged": true
     }
   ],
-  "image_id": "sha256:52c3626c9110753edd5462dbd6e4265a0f162066251ca981e84064056f78bbfe",
+  "image_id": "sha256:c3fff2b72ac81f008415ab1f86fe7591c93e6fcec60a947558dd6d81da374599",
   "restart_test": {
     "service": "amman-review2-app-1 only",
     "source_count": 5,
@@ -96,5 +96,7 @@
     "verification_note": "Initial system-Python urllib readiness loop failed; subsequent TLS-verified curl/httpx and hosted browser checks succeeded. No TLS verification was disabled."
   },
   "verified_at": "2026-11-17T16:12:56.341840+00:00",
-  "memory_after_queries": "106.9MiB / 320MiB"
+  "memory_after_queries": "106.9MiB / 320MiB",
+  "deployed_application_revision": "e075063cfc00ade86de22a7a93e3457daba43543",
+  "publication_method": "git archive of the recorded commit; only the amman-review2 app service recreated"
 }
