@@ -129,3 +129,23 @@ AI-assisted provisional decisions, original research sources, planned checks and
 actual local regression results. This documentation scope does not implement RAG,
 change the completed Studio application or authorize deployment. Historical Studio
 records above are preserved; current Git evidence is distinguished in the new record.
+
+## Review 2 · Individual portfolio and knowledge assistant
+
+Owner's November 17 request authorizes implementation, scoped public hosting, tests,
+commit/push and a PR for Review 2. Existing ShiftBoard routes and its security helpers
+remain intact. New routes: `/portfolio`, `/assistant`, `/api/knowledge/sources`,
+`/api/knowledge/query`, and admin+CSRF protected `/api/knowledge/import`.
+
+The implementation follows the existing [individual record](docs/projects/individual.md#rag-build),
+with a documented capacity-driven change from Chroma to SQLite/sqlite-vec and
+quantized MiniLM ONNX embeddings. Public answers are labeled extractive; no LLM
+is configured. The public HTTPS foundation is live, but generation, branch publication, PR/CI and peer feedback remain pending.
+Hosted restart preserved all 5 documents/26 chunks; all five existing containers
+retained their identities, start times, restart counts and published ports.
+
+Full checks passed: Black/Pylint, 114 regressions, 18 earlier lesson contracts,
+3 Chromium journeys. Both new public pages and all five evaluation questions were
+checked over HTTPS. [Evidence and remaining work](docs/projects/individual.md#rag-build).
+This does not change old learning excerpts, award lesson completion, or authorize
+merging with unresolved requirements.

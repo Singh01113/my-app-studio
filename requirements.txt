@@ -52,3 +52,22 @@ uvicorn==0.54.0
 uvloop==0.23.0; sys_platform != "win32"
 watchfiles==1.3.0
 websockets==17.3
+
+# Review 2: parsing, compact CPU embeddings and persistent vector retrieval.
+beautifulsoup4==4.15.0
+charset-normalizer==3.5.2
+filelock==4.2.11
+flatbuffers==25.12.19
+fsspec==2026.9.0
+hf-xet==1.8.0
+huggingface-hub==0.36.0
+numpy==2.5.5
+onnxruntime==1.32.0
+protobuf==7.36.2
+requests==2.34.2
+soupsieve==4.1.1
+sqlite-vec==0.1.9
+tokenizers==0.23.3
+tqdm==4.70.1
+truststore==0.10.5
+urllib3==2.8.0

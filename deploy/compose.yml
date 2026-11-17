@@ -1,0 +1,43 @@
+name: amman-review2
+services:
+  app:
+    build: ..
+    image: amman-review2:build
+    user: "10001:10001"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 128
+    mem_limit: 320m
+    cpus: 0.75
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      APP_MODE: production
+      APP_DATABASE: /app/runtime/studio.sqlite3
+      RAG_MODEL_DIR: /app/models
+      STUDIO_LIVE_RELOAD: "0"
+    volumes:
+      - ./data:/app/runtime
+      - ./models:/app/models:ro
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=32m,mode=1777
+    networks: [hosting]
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: hosting-web
+      traefik.http.routers.amman-review2.rule: Host(`${APP_HOST}`)
+      traefik.http.routers.amman-review2.entrypoints: websecure
+      traefik.http.routers.amman-review2.tls: "true"
+      traefik.http.routers.amman-review2.tls.certresolver: letsencrypt
+      traefik.http.routers.amman-review2.service: amman-review2
+      traefik.http.services.amman-review2.loadbalancer.server.port: "8000"
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
+networks:
+  hosting:
+    external: true
+    name: hosting-web

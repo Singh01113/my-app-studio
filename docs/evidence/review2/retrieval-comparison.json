@@ -1,0 +1,125 @@
+{
+  "model": "MiniLM fixed revision; same questions and sources",
+  "chunk_counts": {
+    "200_tokens_30_overlap": 26,
+    "120_tokens_20_overlap": 30
+  },
+  "results": [
+    {
+      "question": "What does multi-factor authentication (MFA) mean?",
+      "keyword_overlap_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:000",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:002",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:001"
+      ],
+      "vector_200_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:000",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:002",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:004"
+      ],
+      "current_only_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:000",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:002",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:004"
+      ],
+      "vector_120_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:000",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:002",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:005"
+      ]
+    },
+    {
+      "question": "An urgent email asks me to sign in. What should I do before using its link?",
+      "keyword_overlap_top3": [
+        "C02:381d8ef5620aa5735db84776337a714f7204e2f2813640d68702698aff4adec6:003",
+        "C03:fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d:001",
+        "C04:63a29f54ca28ce111ec483893030366793d830671af422e50830224de7d3470f:000"
+      ],
+      "vector_200_top3": [
+        "C03:fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d:003",
+        "C03:fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d:001",
+        "C03:fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d:002"
+      ],
+      "current_only_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:001",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:004",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:003"
+      ],
+      "vector_120_top3": [
+        "C03:fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d:003",
+        "C03:fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d:001",
+        "C03:fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d:002"
+      ]
+    },
+    {
+      "question": "Why can MFA help after password theft, and can MFA itself be phished?",
+      "keyword_overlap_top3": [
+        "C01:425952ffeb9f86ebd40bcb901bd436e4000a741e62246ea7fc1a9936d81cb3de:000",
+        "C01:425952ffeb9f86ebd40bcb901bd436e4000a741e62246ea7fc1a9936d81cb3de:005",
+        "C02:381d8ef5620aa5735db84776337a714f7204e2f2813640d68702698aff4adec6:001"
+      ],
+      "vector_200_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:002",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:000",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:004"
+      ],
+      "current_only_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:002",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:000",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:004"
+      ],
+      "vector_120_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:002",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:000",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:005"
+      ]
+    },
+    {
+      "question": "Give two actions from these documents that reduce account or device risk, citing each.",
+      "keyword_overlap_top3": [
+        "C02:381d8ef5620aa5735db84776337a714f7204e2f2813640d68702698aff4adec6:003",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:001",
+        "C01:425952ffeb9f86ebd40bcb901bd436e4000a741e62246ea7fc1a9936d81cb3de:000"
+      ],
+      "vector_200_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:003",
+        "C01:425952ffeb9f86ebd40bcb901bd436e4000a741e62246ea7fc1a9936d81cb3de:004",
+        "C04:63a29f54ca28ce111ec483893030366793d830671af422e50830224de7d3470f:004"
+      ],
+      "current_only_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:003",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:004",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:002"
+      ],
+      "vector_120_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:004",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:003",
+        "C01:425952ffeb9f86ebd40bcb901bd436e4000a741e62246ea7fc1a9936d81cb3de:005"
+      ]
+    },
+    {
+      "question": "What is the CVSS score and fixed version for CVE-2026-99999?",
+      "keyword_overlap_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:000",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:001",
+        "C01:425952ffeb9f86ebd40bcb901bd436e4000a741e62246ea7fc1a9936d81cb3de:000"
+      ],
+      "vector_200_top3": [
+        "C04:63a29f54ca28ce111ec483893030366793d830671af422e50830224de7d3470f:004",
+        "C04:63a29f54ca28ce111ec483893030366793d830671af422e50830224de7d3470f:000",
+        "C04:63a29f54ca28ce111ec483893030366793d830671af422e50830224de7d3470f:002"
+      ],
+      "current_only_top3": [
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:001",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:004",
+        "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:002"
+      ],
+      "vector_120_top3": [
+        "C04:63a29f54ca28ce111ec483893030366793d830671af422e50830224de7d3470f:004",
+        "C04:63a29f54ca28ce111ec483893030366793d830671af422e50830224de7d3470f:000",
+        "C04:63a29f54ca28ce111ec483893030366793d830671af422e50830224de7d3470f:002"
+      ]
+    }
+  ],
+  "limitations": "Raw retrieval even for Q5; the answering layer must still abstain. Top-3 IDs alone do not prove answer correctness."
+}

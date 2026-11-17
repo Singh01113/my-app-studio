@@ -1,0 +1,173 @@
+{% extends "portfolio_base.html" %}
+{% block content %}<main id="main">
+<section class="hero">
+<div>
+<p class="eyebrow">NJIT INFORMATION TECHNOLOGY / MAY 2027</p>
+<h1>Thoughtful APIs.<br>
+<span>Inspectable work.</span>
+</h1>
+<p class="lead">I’m Amman, an Information Technology student working toward backend and software engineering. I’m interested in how reliable systems, cybersecurity, and AI fit together.</p>
+<div class="actions">
+<a class="button" href="#work">Explore my work <span>↓</span>
+</a>
+<a class="text-link" href="https://github.com/Singh01113">View GitHub ↗</a>
+</div>
+</div>
+<aside class="hero-note">
+<p class="eyebrow">MY ENGINEERING FOCUS</p>
+<div class="flow-row">
+<span>01</span>
+<strong>Understand the boundary</strong>
+<p>Who can access this, and what should happen when they cannot?</p>
+</div>
+<div class="flow-row">
+<span>02</span>
+<strong>Make the evidence visible</strong>
+<p>Connect behavior to code, tests, and original sources.</p>
+</div>
+<div class="flow-row">
+<span>03</span>
+<strong>Explain the limits</strong>
+<p>A passing test is useful evidence, not a guarantee.</p>
+</div>
+</aside>
+</section>
+<section id="work" class="section">
+<div class="section-heading">
+<div>
+<p class="eyebrow">SELECTED WORK</p>
+<h2>From request to result.</h2>
+</div>
+<p>Small, working foundations.<br>Clear contributions and reviewable code.</p>
+</div>
+<div class="project-grid">
+<article class="project featured">
+<div class="project-label">
+<span>01 / WEB APPLICATION</span>
+<span class="badge">Implemented foundation</span>
+</div>
+<div class="project-visual" aria-label="ShiftBoard access flow">
+<span>Public</span>
+<span>→</span>
+<span>Member</span>
+<span>→</span>
+<span>Admin</span>
+</div>
+<h3>ShiftBoard</h3>
+<p>A workplace communication concept with a working FastAPI account foundation: signup, login, private dashboard, logout, and server-enforced roles.</p>
+<p class="contribution">
+<strong>My contribution:</strong> Defined the audience and branding, tested member/admin behavior, and reviewed AI-assisted implementation. Scheduling and team messaging remain unbuilt.</p>
+<div class="tags">
+<span>FastAPI</span>
+<span>SQLite</span>
+<span>JWT / CSRF</span>
+<span>Pytest</span>
+</div>
+<div class="project-links">
+<a href="/">Open application ↗</a>
+<a href="https://github.com/Singh01113/my-app-studio">Code & checks ↗</a>
+</div>
+</article>
+<article class="project">
+<div class="project-label">
+<span>02 / RETRIEVAL APPLICATION</span>
+<span class="badge">Extractive Build</span>
+</div>
+<div class="project-visual evidence-visual">
+<span>Sources</span>
+<span>→</span>
+<span>Vectors</span>
+<span>→</span>
+<span>Evidence</span>
+</div>
+<h3>Cybersecurity Knowledge Assistant</h3>
+<p>Ask a question, retrieve real passages from a five-document CISA/NIST corpus, and follow each answer back to its source.</p>
+<p class="contribution">
+<strong>My contribution:</strong> Scoped the corpus and evaluation in my individual Plan; this Build implements ingestion, vector retrieval and citations with AI assistance. Answers quote evidence; LLM generation is not yet connected.</p>
+<div class="tags">
+<span>MiniLM / ONNX</span>
+<span>sqlite-vec</span>
+<span>FastAPI</span>
+</div>
+<div class="project-links">
+<a href="/assistant">Try the assistant ↗</a>
+<a href="https://github.com/Singh01113/my-app-studio/blob/codex/review-2-build/docs/projects/individual.md#rag-build">Read the trace ↗</a>
+</div>
+</article>
+<article class="project">
+<div class="project-label">
+<span>03 / DEPLOYMENT</span>
+<span class="badge">Course project</span>
+</div>
+<h3>Server Studio / Calculator</h3>
+<p>A supplied FastAPI calculator image deployed with Docker and Traefik HTTPS. Repository evidence records CI and successful deployment checks.</p>
+<p class="contribution">
+<strong>My contribution:</strong> Configured my deployment, verified calculator results, and reviewed preservation checks. The calculator implementation and release image were provided by the instructor.</p>
+<div class="tags">
+<span>Docker</span>
+<span>Linux</span>
+<span>HTTPS</span>
+<span>GitHub CI</span>
+</div>
+<div class="project-links">
+<a href="https://amman-calc.134-209-120-185.sslip.io">Calculator ↗</a>
+<a href="https://github.com/Singh01113/my-server-studio">Deployment evidence ↗</a>
+</div>
+</article>
+<article class="project">
+<div class="project-label">
+<span>04 / COLLABORATIVE RESEARCH</span>
+<span class="badge">Plan stage</span>
+</div>
+<h3>Physics Content System</h3>
+<p>A team plan for evidence-linked introductory physics study guides, using PostgreSQL relationships and keyword search.</p>
+<p class="contribution">
+<strong>My contribution:</strong> Peer feedback on workflow, responsibilities, baseline comparison, and checks; documentation improvements in PR #4. Retrieval/database and evaluation ownership are documented. No working group system is claimed.</p>
+<div class="tags">
+<span>Architecture research</span>
+<span>Peer review</span>
+</div>
+<div class="project-links">
+<a href="https://github.com/kushalpatel71/is373-group-content-system/pull/4">My contribution ↗</a>
+<span class="muted">Team repository requires access</span>
+</div>
+</article>
+</div>
+</section>
+<section id="about" class="section about">
+<div>
+<p class="eyebrow">ABOUT</p>
+<h2>Building the foundation<br>for what comes next.</h2>
+</div>
+<div>
+<p class="lead">I’m studying Information Technology at New Jersey Institute of Technology, with expected graduation in May 2027.</p>
+<p>My direction is backend and software engineering, with an interest in cybersecurity and AI applications. My current work focuses on APIs, authentication, server-side permissions, deployment, and making technical decisions understandable.</p>
+<p>Employer research influenced this page: Amazon’s early-career posting emphasized review and CI, and Stripe emphasized validating AI-assisted work. That’s why each project links to implementation and evidence, with its limits stated alongside it.</p>
+<a class="text-link" href="https://github.com/Singh01113/my-app-studio/blob/main/docs/projects/individual.md#employer-postings">Original employer research ↗</a>
+</div>
+</section>
+<section id="skills" class="section">
+<p class="eyebrow">TOOLKIT</p>
+<h2>Skills I’m putting into practice.</h2>
+<div class="skills-grid">
+<div>
+<h3>Languages & interfaces</h3>
+<p>Python · Java · SQL<br>HTML / CSS</p>
+</div>
+<div>
+<h3>Backend & delivery</h3>
+<p>FastAPI · Git / GitHub<br>Docker · Linux · CI</p>
+</div>
+<div>
+<h3>Security & AI</h3>
+<p>Authentication · Authorization<br>Cybersecurity fundamentals · Retrieval evaluation</p>
+</div>
+</div>
+</section>
+<section id="contact" class="section contact">
+<p class="eyebrow">LET’S CONNECT</p>
+<h2>Start with the work.<br>Continue the conversation.</h2>
+<p>Find my repositories and public profile on GitHub.</p>
+<a class="button" href="https://github.com/Singh01113">github.com/Singh01113 ↗</a>
+</section>
+</main>{% endblock %}
