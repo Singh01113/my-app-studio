@@ -1,0 +1,15 @@
+{
+  "origin": "https://amman-app.134-209-120-185.sslip.io",
+  "verified_at": "2026-11-17T16:12:36.660819+00:00",
+  "portfolio_narrow_widths_without_overflow": [
+    390,
+    320
+  ],
+  "keyboard_skip_link": "focused",
+  "portfolio_to_assistant_navigation": "passed",
+  "source_count": 5,
+  "chunks": 26,
+  "query": "MFA theft and phishing question",
+  "citation_details": 3,
+  "script_errors": []
+}

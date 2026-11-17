@@ -1,0 +1,54 @@
+{% extends "portfolio_base.html" %}{% block title %}Cybersecurity Knowledge Assistant · Amman Singh{% endblock %}
+{% block scripts %}<script src="/static/assistant.js" defer>
+</script>{% endblock %}
+{% block content %}<main id="main" class="assistant-page">
+<section class="assistant-intro">
+<p class="eyebrow">CYBERSECURITY / SOURCE-GROUNDED EXPLORATION</p>
+<h1>Ask a question.<br>
+<span>Inspect the evidence.</span>
+</h1>
+<p>Explore five educational CISA and NIST documents. Every returned passage links to its original source.</p>
+<p class="notice">
+<strong>Extractive evidence mode.</strong> This version retrieves and quotes source passages; it does not use a language model to generate answers. Four CISA pages are archived and may be outdated. It cannot establish current policy or vulnerability-specific facts.</p>
+</section>
+<div class="assistant-layout">
+<section class="chat-panel" aria-labelledby="chat-heading">
+<div class="panel-heading">
+<h2 id="chat-heading">Knowledge Assistant</h2>
+<span class="badge">MiniLM vector retrieval</span>
+</div>
+<div id="conversation" role="log" aria-live="polite" aria-relevant="additions">
+<div class="welcome">
+<span class="eyebrow">START WITH A QUESTION</span>
+<h3>What would you like to understand?</h3>
+<p>Try a question about passwords, phishing, MFA, or software updates.</p>
+<div class="prompts">
+<button type="button" data-question="What does multi-factor authentication (MFA) mean?">What is MFA?</button>
+<button type="button" data-question="An urgent email asks me to sign in. What should I do before using its link?">Should I trust this urgent email?</button>
+<button type="button" data-question="Why can MFA help after password theft, and can MFA itself be phished?">Can MFA be phished?</button>
+</div>
+</div>
+</div>
+<form id="question-form">
+<label for="question">Your cybersecurity question</label>
+<textarea id="question" name="question" maxlength="1000" minlength="3" rows="3" required placeholder="Ask about the imported documents…">
+</textarea>
+<div class="form-bottom">
+<span>Up to 1,000 characters · 5 questions/minute</span>
+<button class="button" id="ask" type="submit">Find evidence ↗</button>
+</div>
+</form>
+<p id="query-status" role="status">
+</p>
+</section>
+<aside class="source-panel">
+<p class="eyebrow">THE KNOWLEDGE BASE</p>
+<h2>Imported sources</h2>
+<p id="source-status" role="status">Loading import record…</p>
+<div id="sources">
+</div>
+<p class="muted">Agency-authored article text only. Images, fictional stories and third-party material are excluded.</p>
+<a href="https://github.com/Singh01113/my-app-studio/blob/codex/review-2-build/docs/projects/individual.md#rag-build">Architecture & evaluation ↗</a>
+</aside>
+</div>
+</main>{% endblock %}

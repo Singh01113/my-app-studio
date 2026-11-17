@@ -176,3 +176,26 @@ def _check_role_boundary(page, server, username):
             expect(
                 page.get_by_role("heading", name="Administration", exact=True)
             ).to_be_visible()
+
+
+def test_portfolio_navigation_and_assistant_empty_state(page, server):
+    """Public portfolio keyboard/mobile flow and honest uninitialized assistant."""
+    page.goto(server.url + "/portfolio")
+    page.keyboard.press("Tab")
+    expect(page.get_by_role("link", name="Skip to content")).to_be_focused()
+    page.get_by_role("link", name="Work", exact=True).click()
+    expect(page.locator("#work")).to_be_in_viewport()
+    for width in (1440, 390, 320):
+        page.set_viewport_size({"width": width, "height": 900})
+        assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+    page.get_by_role("link", name="Try the assistant ↗").click()
+    expect(page.get_by_text("Extractive evidence mode.", exact=True)).to_be_visible()
+    expect(page.locator("#source-status")).to_have_text(
+        "0 documents · 0 indexed passages"
+    )
+    page.get_by_role("button", name="What is MFA?", exact=True).click()
+    page.get_by_role("button", name="Find evidence ↗").click()
+    expect(page.locator(".answer-message")).to_contain_text(
+        "No documents have been imported"
+    )
+    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")

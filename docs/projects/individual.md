@@ -1,4 +1,6 @@
-**NJIT IS373 · Review 1 — Plan · Combined individual project record**
+**NJIT IS373 · Reviews 1–2 · Combined individual project record**
+
+**Build update — 2026-11-17:** [Live portfolio](https://amman-app.134-209-120-185.sslip.io/portfolio) and [live knowledge assistant](https://amman-app.134-209-120-185.sslip.io/assistant) return trusted HTTPS responses. The assistant uses real vector retrieval and explicitly extractive answers. **LLM generation remains incomplete.** See [portfolio Build](#portfolio-build) and [technical Build](#rag-build); the Review 1 research below is retained as historical Plan evidence. Review 2 deadline supplied by owner: November 24, 2026, 1 PM Eastern.
 
 Prepared 2026-11-16. Submission deadline supplied in the assignment request:
 2026-11-17, 1 PM Eastern; Canvas remains the authority. This is one evolving
@@ -12,7 +14,7 @@ to complete Plan using reasonable choices. Existing learner explanations in
 [LEARNING](../../LEARNING.md) remain unchanged. Earlier conversations are available
 only through the existing repository records. Private career reflection is excluded.
 
-**Research-review index**
+**Review 1 research-review index (historical status)**
 
 | Requirement | Evidence | Status on 2026-11-16 |
 |---|---|---|
@@ -34,7 +36,33 @@ The published template includes “Individual” in both project headings; this 
 uses the two exact headings explicitly requested for this submission. Both identify
 individual work. Confirm the wording against Canvas before submitting.
 
-## 1. Portfolio + career research
+<a id="1-portfolio--career-research"></a>
+## 1. Individual portfolio + career research
+
+<a id="portfolio-build"></a>
+### Review 2 Build — implemented and hosted
+
+**Live URL:** [Amman Singh portfolio](https://amman-app.134-209-120-185.sslip.io/portfolio). **Repository:** [my-app-studio](https://github.com/Singh01113/my-app-studio). Publication branch: `codex/review-2-build`; application commit `e075063`. [PR #8](https://github.com/Singh01113/my-app-studio/pull/8) is open and intentionally unmerged because generation remains incomplete. [GitHub checks](https://github.com/Singh01113/my-app-studio/pull/8/checks) are running at this record update; consult their latest result before merging.
+
+Implemented a public single-page portfolio with introduction, anchored Work/About/Skills/Contact navigation, responsive project cards and a verified GitHub contact link. No resume, email, LinkedIn, employment or credential was invented. The portfolio is separate from ShiftBoard at `/`; existing account/admin routes remain intact.
+
+Featured work: ShiftBoard's account/permission foundation, the working extractive Cybersecurity Knowledge Assistant, Server Studio's deployment of the **instructor-supplied calculator image**, and the group's physics Plan. The group card identifies Amman's documentation/review contribution and warns that its repository requires access. It does not claim group implementation or solo ownership.
+
+**Research → design:** the retained J2 Amazon research emphasized code review/CI and J3 Stripe emphasized critical validation of AI-assisted work. Each card therefore links to inspectable implementation or records and states its actual contribution and unfinished scope. The selected single-page layout and backend/software-engineering direction follow Review 1 and the owner's Build brief.
+
+**Browser evidence (AI-observed, not a learner/peer report):**
+[desktop screenshot](../evidence/review2/portfolio-desktop.png),
+[390px mobile screenshot](../evidence/review2/portfolio-mobile.png).
+These are genuine hosted browser renders of this implementation; [browser check record](../evidence/review2/browser.json). Full Chromium regression also checks 1440/390/320px widths, visible keyboard skip navigation, the Work anchor, navigation to the assistant and its empty-index state. Initial 320px card overflow was fixed and retested. No real peer observation has been supplied.
+
+**Changed:** Built `app/templates/portfolio*.html`, shared `app/static/portfolio.css`, and the `/portfolio` route. Deployed the application under a new HTTPS hostname without issuing changes to existing services or proxy configuration.
+
+**Checked:** Public TLS-verified GET `/portfolio` returned 200 on November 17. The full `python3 studio.py check` passed Black, Pylint, **114 regression tests + 18 APP-001–003 contracts + 3 Chromium journeys = 135 tests**. [Local check output](../evidence/review2/check-results.txt) records the real run. The account and role source files were not modified. Original-page source links were reused from the verified Plan; future employer vacancy status is not implied.
+
+**Next:** Open the review PR and inspect its current CI. Ask a real peer to identify the target role and find evidence for one skill; record their actual feedback and any change/retest here. Post-deployment restart and service-preservation checks subsequently passed; see the technical section. Do not claim that hosting checks prove every link or accessibility requirement.
+
+### Review 1 Plan evidence (retained)
+
 
 ### Sources and source index
 
@@ -224,7 +252,68 @@ complete the dated employer actions, choose public resume/contact details and
 supply the real group contribution. Build target from the course brief: Nov 24;
 checked hosted release Dec 3; improvement Dec 10, subject to Canvas.
 
-## 2. RAG app + technical research
+<a id="2-rag-app--technical-research"></a>
+## 2. Individual RAG app + technical research
+
+<a id="rag-build"></a>
+### Review 2 Build — real retrieval, extractive answers
+
+**Live URL:** [Cybersecurity Knowledge Assistant](https://amman-app.134-209-120-185.sslip.io/assistant). **Repository:** [my-app-studio](https://github.com/Singh01113/my-app-studio). **Status:** hosted working import/retrieval/citation foundation; **not a completed LLM-powered RAG application**. The professor's brief requires real generation. No approved model endpoint/key was supplied, and the existing 961 MiB server had only about 443 MiB available before deployment; the proposed 1.5B local generator was not installed alongside its five services.
+
+#### Implemented journey and representation
+
+1. Fetch only the five allowlisted original CISA/NIST HTTPS URLs, bound source size/time and reject redirects. For this run, TLS-verified original HTML was downloaded locally and imported through the trusted owner CLI's snapshot option. No fabricated or third-party source content is included. Source pages were re-inspected November 17; the same permission/archive restrictions from Review 1 apply.
+2. Parse reviewed article sections, remove navigation, images, scripts and fictional stories, retain real headings, normalize whitespace and hash the selected content plus preprocessing version.
+3. Tokenize using the pinned MiniLM tokenizer: **200 word-piece tokens, 30 overlap**, no tokenizer padding/truncation during chunk construction. Prefix the document title and section heading for embedding; reject inputs beyond 256 model tokens and reject empty chunks.
+4. Run real quantized CPU ONNX MiniLM inference, masked mean pooling and L2 normalization. Store **384-dimensional float32 vectors**, text, headings, token counts, document IDs, URLs, source/access dates, permission and archive status in a separate persistent SQLite database. Authentication data stays separate.
+5. Embed the question with the same model and perform exact cosine search over active versions, top 3. On the Linux host, `sqlite-vec` provides the vector-distance SQL function. The local macOS framework Python lacks extension-loading support, so the same exact cosine computation is registered as a Python SQL function. Neither path is keyword retrieval masquerading as embeddings.
+6. Display exact retrieved passages with numbered citations, source links and metadata. **No generation model is called.** Questions asking for current policy or CVE-specific facts abstain; low similarity also abstains. The UI labels archive status, extractive mode, loading, busy/timeout/errors and request limits.
+
+**Executed import:** 5 documents, **26 active chunks** (C01 7, C02 4, C03 5, C04 5, C05 5). [Import report](../evidence/review2/first-import.json); [repeat import](../evidence/review2/repeat-import.json) adds **zero** chunks; [hosted source record](../evidence/review2/hosted-sources.json) confirms the deployed corpus. An actual chunk, vector sample and returned evidence are in [local evaluation](../evidence/review2/local-evaluation.json). Runtime databases, raw HTML, model weights and secrets are excluded from Git.
+
+**Versions:** `sentence-transformers/all-MiniLM-L6-v2` revision `1110a243fdf4706b3f48f1d95db1a4f5529b4d41`, file `onnx/model_quint8_avx2.onnx`; ONNX Runtime 1.32.0; tokenizers 0.23.3; sqlite-vec 0.1.9. Both downloaded artifact hashes are checked before model load. [Pinned dependencies](../../requirements.txt) and [embedding implementation](../../app/knowledge/embedding.py) are the exact configuration.
+
+#### Actual query, answer and evaluation
+
+[Hosted query/answer traces](../evidence/review2/hosted-queries.json) record all five real HTTPS POST requests, returned IDs, scores, exact excerpts, source links and latency. The evidence IDs are content-version-derived, not invented example IDs. [Assistant desktop](../evidence/review2/assistant-desktop.png) and [mobile](../evidence/review2/assistant-mobile.png) screenshots show the actual hosted question journey; [browser record](../evidence/review2/browser.json) records navigation, source/citation counts and no script errors.
+
+| Case from Review 1 | Hosted observed result | Assessment |
+|---|---|---|
+| Q1 exact MFA terminology | Three C05 passages, including MFA definition | Required evidence present; quoted answer, not LLM generation |
+| Q2 paraphrased urgent email | C03 Recognize, Resist and independent-contact guidance | Required evidence present; no supplied suspicious-link recommendation |
+| Q3 password theft and phishing MFA | C05 second barrier, MFA definition and phishing-resistant qualification | Both sides of question supported by exact passages |
+| Q4 two protective actions | C05 MFA, C01 unique passwords and C04 prompt updates | Account and device evidence present across original documents |
+| Q5 fabricated CVE score/fixed version | Explicit cannot-answer response, no evidence/citations or vulnerability data invented | Abstention passed; does not assert whether the CVE exists |
+
+First hosted query took about **1,167 ms** including model warm-up; later cases took about **1–20 ms**, as recorded. Linux/ARM local scores differ slightly under quantized inference; source coverage remained the same. Every displayed substantive passage is copied from its referenced stored text; this is mechanically traceable support, not an independent accuracy score or a generated-claim evaluation. Original URLs for all five sources returned successful TLS responses during the import preparation.
+
+**Observed failures and fixes:** initial tokenizer padding yielded empty text slices. Disabled padding/truncation for chunking, added empty-chunk rejection, reimported and asserted every active chunk is nonempty. Initial Q4 missed C04; [initial evaluation](../evidence/review2/initial-evaluation.json) preserves that failure. Adding document-title context and calibrating the small-set similarity gate (best score ≥0.35, included passages ≥0.28) retrieved C04 on retest. These thresholds were tuned on this tiny set and may overfit; they are not universal evidence-sufficiency guarantees. Unrelated football/cake questions and a current-policy question also abstained locally.
+
+#### Architecture decision and bounded comparisons
+
+Replaced the proposed Chroma service with **SQLite + sqlite-vec exact vector search** after measuring the existing host's limited free RAM. Kept the planned MiniLM embedding family using its compact quantized ONNX artifact. This is a justified Build change under the owner's request to choose a safer deployment; it does not claim Chroma was built. The source-grounded extractive fallback is explicitly allowed by the owner's request but leaves the professor's model-generation requirement incomplete. Graph/pgvector alternatives and original research remain below.
+
+[Executed comparison](../evidence/review2/retrieval-comparison.json) holds the corpus/model/questions fixed and records a keyword-overlap baseline, 200-token versus 120-token chunks, and all-sources versus non-archived-only filtering. The smaller chunks produced 30 passages instead of 26. Restricting to non-archived C05 removes C03 phishing instructions. Vector retrieval recovers the expected phishing passages for Q2 where the keyword baseline ranks unrelated passages as well. Both raw retrievers return neighbors for Q5, demonstrating why the answering layer must abstain. Keep 200-token chunks and explicit archive labels for this historical teaching corpus; the small comparison does not establish broad superiority.
+
+#### Checks, hosting and boundaries
+
+- `python3 studio.py check`: Black/Pylint and **135 tests passed**. [Exact output](../evidence/review2/check-results.txt). Existing ShiftBoard auth/role behavior remains covered. A new transitive `httpx2` package initially changed Starlette test-client cookie behavior and caused nine existing security tests to fail; pinning the hub dependency and removing that transitive package restored the original tested path. Existing deprecation warning remains. Tests were not weakened.
+- New isolated tests exercise concurrent/repeat import, reopening persistent storage, source-version replacement, failed-embedding rollback, source citations, unsupported/current questions, persistent rate limits, anonymous/member/admin import boundaries, CSRF, same-session demotion, arbitrary-URL/invalid-ID rejection, input length and source-fetch failure. Synthetic test vectors are explicitly labeled fixtures; the separate evaluation uses the real model and agency documents.
+- `scripts/import_knowledge.py --snapshots runtime/review2-sources`, `scripts/evaluate_knowledge.py` and `scripts/compare_retrieval.py` executed with `.venv/bin/python`; reports linked above. Repeat import added zero chunks. A reopened test database retained its indexed source. A deployed-container restart also retained all 5 documents/26 chunks and returned a successful MFA answer; [deployment evidence](../evidence/review2/deployment.json).
+- Public TLS GET `/portfolio`, `/assistant`, `/api/knowledge/sources` returned 200; `/health` returned `status: ok`, `mode: production`. All five queries executed against the public endpoint. Hosted Chromium also verified keyboard navigation, portfolio-to-assistant navigation, a real question, three citation details, and 390/320px portfolio layout.
+- Deployment adds only Compose project `amman-review2` at a new hostname, with one non-root app process, dropped capabilities, read-only root, persistent data mount, private model mount, 320 MiB memory/0.75 CPU limits and no published host port. Existing proxy configuration was not edited. No other service was restarted by issued deployment commands. Before/after comparison confirmed all five pre-existing services retained their IDs, start times, restart counts and published ports. The new container used 106.9 MiB after queries (see exact measurement in deployment evidence).
+- Deployment setup failures (data-directory chown and unreadable copied files) were corrected with scoped ownership/readability changes and non-root-owned image files. The final service started and served the verified public requests. The one-time ownership helper received CHOWN only; the serving container retains no capabilities.
+- Query limits are persisted: 5/minute per server-observed client and 100/day total. One query/import runs at a time. Proxy clients may share a rate bucket. Model-token limits can reject a long query even within the character limit. Source/version updates are transactional; failed indexing preserves the active version.
+- Automatic approval review initially blocked the combined restart/preservation command with a usage-limit error. After approvals worked again, the read-only preservation check passed and the scoped restart was retried. The initial urllib readiness loop failed; TLS-verified curl/httpx and real-browser checks subsequently confirmed the running application and persistent corpus. No TLS verification was disabled.
+
+**Changed:** Built actual import, extraction, chunking, embedding storage, retrieval, public UI/citations and admin-only import API; added real evaluation artifacts and a repeatable isolated deployment in [deploy instructions](../../deploy/README.md).
+
+**Checked:** Hosted import/source counts and Q1–Q5 traces, local repeat/reopen tests, 135 regressions/contracts/browser checks, layout screenshots, and local baseline/design comparisons. Hosted restart and existing-service preservation are verified. No LLM generation, backup restore, current remote CI, or independent peer observation is claimed.
+
+**Next:** Obtain an approved generation endpoint or separately resourced local model (never paste a key into chat), implement and evaluate real generation/citation validation; review PR #8 and verify its latest CI; obtain real peer feedback and record a change/retest. The Build remains incomplete specifically for generation and the remaining review items.
+
+### Review 1 Plan evidence (retained)
+
 
 ### Sources and source index
 

@@ -1,0 +1,286 @@
+{
+  "url": "https://amman-app.134-209-120-185.sslip.io/assistant",
+  "verified_at": "2026-11-17T16:04:55.343021+00:00",
+  "results": [
+    {
+      "mode": "extractive",
+      "model": null,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "question": "What does multi-factor authentication (MFA) mean?",
+      "answer": "Relevant source excerpts (check the passages for the scope of your question):\n\n[1] Passwords alone are not effective in securing your most sensitive business assets, as they have become too easy for threat actors to access. MFA is an important security enhancement that requires a user to verify their identity by providing more than just a username and password. It requires a user to provide a combination of two or more of the following: something you know (like a password or PIN) something you have (like a smart card or security key) something you are (like your fingerprint or face)\n\n[2] If a password is compromised, MFA creates a second barrier that makes it much harder for the threat actor to access your systems and data.\n\n[3] as health information or PII data) or for users that have elevated privileges (such as admins or security personnel) organizations should be enforcing, or at least offering, phishing resistant authenticators. Individuals should explore the security settings for their more sensitive online accounts to see if phishing resistant authenticators are available and make use of them if they are. In reality, these tools are often easier, faster, and more convenient than the MFA \u2013 such as SMS text codes \u2013 they may currently be using.",
+      "evidence": [
+        {
+          "id": "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:000",
+          "heading": "What is Multi-Factor Authentication (MFA)?",
+          "text": "Passwords alone are not effective in securing your most sensitive business assets, as they have become too easy for threat actors to access. MFA is an important security enhancement that requires a user to verify their identity by providing more than just a username and password. It requires a user to provide a combination of two or more of the following: something you know (like a password or PIN) something you have (like a smart card or security key) something you are (like your fingerprint or face)",
+          "tokens": 100,
+          "score": 0.8774974271655083,
+          "source": {
+            "title": "Multi-Factor Authentication",
+            "url": "https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/multi-factor-authentication",
+            "id": "C05",
+            "agency": "NIST",
+            "archived": false,
+            "source_date": "2026-01-05",
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508",
+            "accessed_at": "2026-11-17T16:03:38.088811+00:00"
+          }
+        },
+        {
+          "id": "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:002",
+          "heading": "How does MFA Protect My Business From this Threat?",
+          "text": "If a password is compromised, MFA creates a second barrier that makes it much harder for the threat actor to access your systems and data.",
+          "tokens": 27,
+          "score": 0.816671296954155,
+          "source": {
+            "title": "Multi-Factor Authentication",
+            "url": "https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/multi-factor-authentication",
+            "id": "C05",
+            "agency": "NIST",
+            "archived": false,
+            "source_date": "2026-01-05",
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508",
+            "accessed_at": "2026-11-17T16:03:38.088811+00:00"
+          }
+        },
+        {
+          "id": "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:004",
+          "heading": "Taking MFA to the Next Level: Phishing-Resistant Authentication",
+          "text": "as health information or PII data) or for users that have elevated privileges (such as admins or security personnel) organizations should be enforcing, or at least offering, phishing resistant authenticators. Individuals should explore the security settings for their more sensitive online accounts to see if phishing resistant authenticators are available and make use of them if they are. In reality, these tools are often easier, faster, and more convenient than the MFA \u2013 such as SMS text codes \u2013 they may currently be using.",
+          "tokens": 101,
+          "score": 0.7089088261127472,
+          "source": {
+            "title": "Multi-Factor Authentication",
+            "url": "https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/multi-factor-authentication",
+            "id": "C05",
+            "agency": "NIST",
+            "archived": false,
+            "source_date": "2026-01-05",
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508",
+            "accessed_at": "2026-11-17T16:03:38.088811+00:00"
+          }
+        }
+      ],
+      "supported": true,
+      "limitation": "Extractive evidence mode: quoted source text, not an LLM-generated answer. Four CISA sources are archived; this is a teaching corpus, not current security advice.",
+      "latency_ms": 1167.32
+    },
+    {
+      "mode": "extractive",
+      "model": null,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "question": "An urgent email asks me to sign in. What should I do before using its link?",
+      "answer": "Relevant source excerpts (check the passages for the scope of your question):\n\n[1] Delete the message. Don\u2019t reply or click on any attachment or link, including any \u201cunsubscribe\u201d link. Just delete .\n\n[2] Look for these common signs: Urgent or emotionally appealing language, especially messages that claim dire consequences for not responding immediately Requests to send personal and financial information Untrusted shortened URLs Incorrect email addresses or links, like amaz a n.com A common sign used to be poor grammar or misspellings although in the era of artificial intelligence (AI) some emails will now have perfect grammar and spelling, so look out for the other signs.\n\n[3] If you suspect phishing, resist the temptation to click on links or attachments that seem too good to be true and may be trying to access your personal information. Instead, report the phish to protect yourself and others. Typically, you\u2019ll find options to report near the person\u2019s email address or username. You can also report via the \u201creport spam\u201d button in the toolbar or settings.",
+      "evidence": [
+        {
+          "id": "C03:fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d:003",
+          "heading": "3. Delete",
+          "text": "Delete the message. Don\u2019t reply or click on any attachment or link, including any \u201cunsubscribe\u201d link. Just delete .",
+          "tokens": 32,
+          "score": 0.5096190571784973,
+          "source": {
+            "title": "Recognize and Report Phishing",
+            "url": "https://www.cisa.gov/secure-our-world/recognize-and-report-phishing",
+            "id": "C03",
+            "agency": "CISA",
+            "archived": true,
+            "source_date": null,
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d",
+            "accessed_at": "2026-11-17T16:03:36.358153+00:00"
+          }
+        },
+        {
+          "id": "C03:fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d:001",
+          "heading": "1. Recognize",
+          "text": "Look for these common signs: Urgent or emotionally appealing language, especially messages that claim dire consequences for not responding immediately Requests to send personal and financial information Untrusted shortened URLs Incorrect email addresses or links, like amaz a n.com A common sign used to be poor grammar or misspellings although in the era of artificial intelligence (AI) some emails will now have perfect grammar and spelling, so look out for the other signs.",
+          "tokens": 88,
+          "score": 0.4957277178764343,
+          "source": {
+            "title": "Recognize and Report Phishing",
+            "url": "https://www.cisa.gov/secure-our-world/recognize-and-report-phishing",
+            "id": "C03",
+            "agency": "CISA",
+            "archived": true,
+            "source_date": null,
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d",
+            "accessed_at": "2026-11-17T16:03:36.358153+00:00"
+          }
+        },
+        {
+          "id": "C03:fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d:002",
+          "heading": "2. Resist",
+          "text": "If you suspect phishing, resist the temptation to click on links or attachments that seem too good to be true and may be trying to access your personal information. Instead, report the phish to protect yourself and others. Typically, you\u2019ll find options to report near the person\u2019s email address or username. You can also report via the \u201creport spam\u201d button in the toolbar or settings.",
+          "tokens": 84,
+          "score": 0.47206372022628784,
+          "source": {
+            "title": "Recognize and Report Phishing",
+            "url": "https://www.cisa.gov/secure-our-world/recognize-and-report-phishing",
+            "id": "C03",
+            "agency": "CISA",
+            "archived": true,
+            "source_date": null,
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "fd6ced2ea3229794e06dde2cb86bf4a413c77ba48e8e64d89c74e836be00d46d",
+            "accessed_at": "2026-11-17T16:03:36.358153+00:00"
+          }
+        }
+      ],
+      "supported": true,
+      "limitation": "Extractive evidence mode: quoted source text, not an LLM-generated answer. Four CISA sources are archived; this is a teaching corpus, not current security advice.",
+      "latency_ms": 19.89
+    },
+    {
+      "mode": "extractive",
+      "model": null,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "question": "Why can MFA help after password theft, and can MFA itself be phished?",
+      "answer": "Relevant source excerpts (check the passages for the scope of your question):\n\n[1] If a password is compromised, MFA creates a second barrier that makes it much harder for the threat actor to access your systems and data.\n\n[2] Passwords alone are not effective in securing your most sensitive business assets, as they have become too easy for threat actors to access. MFA is an important security enhancement that requires a user to verify their identity by providing more than just a username and password. It requires a user to provide a combination of two or more of the following: something you know (like a password or PIN) something you have (like a smart card or security key) something you are (like your fingerprint or face)\n\n[3] as health information or PII data) or for users that have elevated privileges (such as admins or security personnel) organizations should be enforcing, or at least offering, phishing resistant authenticators. Individuals should explore the security settings for their more sensitive online accounts to see if phishing resistant authenticators are available and make use of them if they are. In reality, these tools are often easier, faster, and more convenient than the MFA \u2013 such as SMS text codes \u2013 they may currently be using.",
+      "evidence": [
+        {
+          "id": "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:002",
+          "heading": "How does MFA Protect My Business From this Threat?",
+          "text": "If a password is compromised, MFA creates a second barrier that makes it much harder for the threat actor to access your systems and data.",
+          "tokens": 27,
+          "score": 0.7618020623922348,
+          "source": {
+            "title": "Multi-Factor Authentication",
+            "url": "https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/multi-factor-authentication",
+            "id": "C05",
+            "agency": "NIST",
+            "archived": false,
+            "source_date": "2026-01-05",
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508",
+            "accessed_at": "2026-11-17T16:03:38.088811+00:00"
+          }
+        },
+        {
+          "id": "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:000",
+          "heading": "What is Multi-Factor Authentication (MFA)?",
+          "text": "Passwords alone are not effective in securing your most sensitive business assets, as they have become too easy for threat actors to access. MFA is an important security enhancement that requires a user to verify their identity by providing more than just a username and password. It requires a user to provide a combination of two or more of the following: something you know (like a password or PIN) something you have (like a smart card or security key) something you are (like your fingerprint or face)",
+          "tokens": 100,
+          "score": 0.7001589238643646,
+          "source": {
+            "title": "Multi-Factor Authentication",
+            "url": "https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/multi-factor-authentication",
+            "id": "C05",
+            "agency": "NIST",
+            "archived": false,
+            "source_date": "2026-01-05",
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508",
+            "accessed_at": "2026-11-17T16:03:38.088811+00:00"
+          }
+        },
+        {
+          "id": "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:004",
+          "heading": "Taking MFA to the Next Level: Phishing-Resistant Authentication",
+          "text": "as health information or PII data) or for users that have elevated privileges (such as admins or security personnel) organizations should be enforcing, or at least offering, phishing resistant authenticators. Individuals should explore the security settings for their more sensitive online accounts to see if phishing resistant authenticators are available and make use of them if they are. In reality, these tools are often easier, faster, and more convenient than the MFA \u2013 such as SMS text codes \u2013 they may currently be using.",
+          "tokens": 101,
+          "score": 0.6568343341350555,
+          "source": {
+            "title": "Multi-Factor Authentication",
+            "url": "https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/multi-factor-authentication",
+            "id": "C05",
+            "agency": "NIST",
+            "archived": false,
+            "source_date": "2026-01-05",
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508",
+            "accessed_at": "2026-11-17T16:03:38.088811+00:00"
+          }
+        }
+      ],
+      "supported": true,
+      "limitation": "Extractive evidence mode: quoted source text, not an LLM-generated answer. Four CISA sources are archived; this is a teaching corpus, not current security advice.",
+      "latency_ms": 14.56
+    },
+    {
+      "mode": "extractive",
+      "model": null,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "question": "Give two actions from these documents that reduce account or device risk, citing each.",
+      "answer": "Relevant source excerpts (check the passages for the scope of your question):\n\n[1] Enabling MFA on all accounts that offer it is essential for reducing the cybersecurity risks to your business. However, some forms of MFA are more secure than others\u2013 as some forms of MFA can be susceptible to phishing threats such as One Time Pins (OTPs) and SMS based codes. FIDO authenticators paired with W3C\u2019s Web Authentication API are the most common form of phishing resistant authenticators widely available today. These can take the form of separate hardware keys or be embedded directly into platforms (for example your phone or laptop). Availability, practicality, and security of these \u201cplatform authenticators\u201d increasingly puts strong, phishing resistant authenticators into user\u2019s hands without the need for additional devices or dongles. Not every transaction requires phishing resistant authentication. However, for applications that protect sensitive information (such as health information or PII data) or for users that have elevated privileges (such as admins or security personnel) organizations should be enforcing, or\n\n[2] Use a different strong password for each account. For example: Bank: k8dfh8c@Pfv0gB2 Email account: legal tiny facility freehand probable enamel Social media account: e246gs%mFs#3tv6\n\n[3] If a criminal gets into our devices through a security flaw, they will look for sensitive information to exploit. Technology providers issue software updates to \"patch\u201d security weak spots as quickly as they can. If we don\u2019t install them, they can\u2019t protect us! Software updates can also: Fix bugs Improve performance Add features that can enhance our experience",
+      "evidence": [
+        {
+          "id": "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:003",
+          "heading": "Taking MFA to the Next Level: Phishing-Resistant Authentication",
+          "text": "Enabling MFA on all accounts that offer it is essential for reducing the cybersecurity risks to your business. However, some forms of MFA are more secure than others\u2013 as some forms of MFA can be susceptible to phishing threats such as One Time Pins (OTPs) and SMS based codes. FIDO authenticators paired with W3C\u2019s Web Authentication API are the most common form of phishing resistant authenticators widely available today. These can take the form of separate hardware keys or be embedded directly into platforms (for example your phone or laptop). Availability, practicality, and security of these \u201cplatform authenticators\u201d increasingly puts strong, phishing resistant authenticators into user\u2019s hands without the need for additional devices or dongles. Not every transaction requires phishing resistant authentication. However, for applications that protect sensitive information (such as health information or PII data) or for users that have elevated privileges (such as admins or security personnel) organizations should be enforcing, or",
+          "tokens": 200,
+          "score": 0.36695265769958496,
+          "source": {
+            "title": "Multi-Factor Authentication",
+            "url": "https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/multi-factor-authentication",
+            "id": "C05",
+            "agency": "NIST",
+            "archived": false,
+            "source_date": "2026-01-05",
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508",
+            "accessed_at": "2026-11-17T16:03:38.088811+00:00"
+          }
+        },
+        {
+          "id": "C01:425952ffeb9f86ebd40bcb901bd436e4000a741e62246ea7fc1a9936d81cb3de:004",
+          "heading": "3. Make them unique",
+          "text": "Use a different strong password for each account. For example: Bank: k8dfh8c@Pfv0gB2 Email account: legal tiny facility freehand probable enamel Social media account: e246gs%mFs#3tv6",
+          "tokens": 52,
+          "score": 0.3230222463607788,
+          "source": {
+            "title": "Use Strong Passwords",
+            "url": "https://www.cisa.gov/secure-our-world/use-strong-passwords",
+            "id": "C01",
+            "agency": "CISA",
+            "archived": true,
+            "source_date": null,
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "425952ffeb9f86ebd40bcb901bd436e4000a741e62246ea7fc1a9936d81cb3de",
+            "accessed_at": "2026-11-17T16:03:34.694771+00:00"
+          }
+        },
+        {
+          "id": "C04:63a29f54ca28ce111ec483893030366793d830671af422e50830224de7d3470f:004",
+          "heading": "Why It\u2019s So Important to Update Promptly",
+          "text": "If a criminal gets into our devices through a security flaw, they will look for sensitive information to exploit. Technology providers issue software updates to \"patch\u201d security weak spots as quickly as they can. If we don\u2019t install them, they can\u2019t protect us! Software updates can also: Fix bugs Improve performance Add features that can enhance our experience",
+          "tokens": 70,
+          "score": 0.307269811630249,
+          "source": {
+            "title": "Update Software",
+            "url": "https://www.cisa.gov/secure-our-world/update-software",
+            "id": "C04",
+            "agency": "CISA",
+            "archived": true,
+            "source_date": null,
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "63a29f54ca28ce111ec483893030366793d830671af422e50830224de7d3470f",
+            "accessed_at": "2026-11-17T16:03:37.180396+00:00"
+          }
+        }
+      ],
+      "supported": true,
+      "limitation": "Extractive evidence mode: quoted source text, not an LLM-generated answer. Four CISA sources are archived; this is a teaching corpus, not current security advice.",
+      "latency_ms": 17.72
+    },
+    {
+      "mode": "extractive",
+      "model": null,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "question": "What is the CVSS score and fixed version for CVE-2026-99999?",
+      "answer": "The imported sources do not establish the requested current, vulnerability-specific, or out-of-scope facts. I cannot answer this from this corpus.",
+      "evidence": [],
+      "supported": false,
+      "limitation": "Extractive evidence mode: quoted source text, not an LLM-generated answer. Four CISA sources are archived; this is a teaching corpus, not current security advice.",
+      "latency_ms": 1.26
+    }
+  ]
+}

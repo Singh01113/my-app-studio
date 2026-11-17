@@ -1,0 +1,102 @@
+{
+  "existing_services": [
+    {
+      "service": "/is373-studio-calculator-calculator-1",
+      "unchanged": true
+    },
+    {
+      "service": "/is373-prod",
+      "unchanged": true
+    },
+    {
+      "service": "/is373-qa",
+      "unchanged": true
+    },
+    {
+      "service": "/hosting373-site-1-1",
+      "unchanged": true
+    },
+    {
+      "service": "/hosting373-traefik-1",
+      "unchanged": true
+    }
+  ],
+  "image_id": "sha256:c3fff2b72ac81f008415ab1f86fe7591c93e6fcec60a947558dd6d81da374599",
+  "restart_test": {
+    "service": "amman-review2-app-1 only",
+    "source_count": 5,
+    "chunk_count": 26,
+    "query_after_restart": {
+      "mode": "extractive",
+      "model": null,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "question": "Why can MFA help after password theft, and can MFA itself be phished?",
+      "answer": "Relevant source excerpts (check the passages for the scope of your question):\n\n[1] If a password is compromised, MFA creates a second barrier that makes it much harder for the threat actor to access your systems and data.\n\n[2] Passwords alone are not effective in securing your most sensitive business assets, as they have become too easy for threat actors to access. MFA is an important security enhancement that requires a user to verify their identity by providing more than just a username and password. It requires a user to provide a combination of two or more of the following: something you know (like a password or PIN) something you have (like a smart card or security key) something you are (like your fingerprint or face)\n\n[3] as health information or PII data) or for users that have elevated privileges (such as admins or security personnel) organizations should be enforcing, or at least offering, phishing resistant authenticators. Individuals should explore the security settings for their more sensitive online accounts to see if phishing resistant authenticators are available and make use of them if they are. In reality, these tools are often easier, faster, and more convenient than the MFA \u2013 such as SMS text codes \u2013 they may currently be using.",
+      "evidence": [
+        {
+          "id": "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:002",
+          "heading": "How does MFA Protect My Business From this Threat?",
+          "text": "If a password is compromised, MFA creates a second barrier that makes it much harder for the threat actor to access your systems and data.",
+          "tokens": 27,
+          "score": 0.7618020623922348,
+          "source": {
+            "title": "Multi-Factor Authentication",
+            "url": "https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/multi-factor-authentication",
+            "id": "C05",
+            "agency": "NIST",
+            "archived": false,
+            "source_date": "2026-01-05",
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508",
+            "accessed_at": "2026-11-17T16:03:38.088811+00:00"
+          }
+        },
+        {
+          "id": "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:000",
+          "heading": "What is Multi-Factor Authentication (MFA)?",
+          "text": "Passwords alone are not effective in securing your most sensitive business assets, as they have become too easy for threat actors to access. MFA is an important security enhancement that requires a user to verify their identity by providing more than just a username and password. It requires a user to provide a combination of two or more of the following: something you know (like a password or PIN) something you have (like a smart card or security key) something you are (like your fingerprint or face)",
+          "tokens": 100,
+          "score": 0.7001589238643646,
+          "source": {
+            "title": "Multi-Factor Authentication",
+            "url": "https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/multi-factor-authentication",
+            "id": "C05",
+            "agency": "NIST",
+            "archived": false,
+            "source_date": "2026-01-05",
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508",
+            "accessed_at": "2026-11-17T16:03:38.088811+00:00"
+          }
+        },
+        {
+          "id": "C05:7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508:004",
+          "heading": "Taking MFA to the Next Level: Phishing-Resistant Authentication",
+          "text": "as health information or PII data) or for users that have elevated privileges (such as admins or security personnel) organizations should be enforcing, or at least offering, phishing resistant authenticators. Individuals should explore the security settings for their more sensitive online accounts to see if phishing resistant authenticators are available and make use of them if they are. In reality, these tools are often easier, faster, and more convenient than the MFA \u2013 such as SMS text codes \u2013 they may currently be using.",
+          "tokens": 101,
+          "score": 0.6568343341350555,
+          "source": {
+            "title": "Multi-Factor Authentication",
+            "url": "https://www.nist.gov/itl/smallbusinesscyber/guidance-topic/multi-factor-authentication",
+            "id": "C05",
+            "agency": "NIST",
+            "archived": false,
+            "source_date": "2026-01-05",
+            "permission": "Agency-authored educational text; 17 USC 105; NIST reuse policy for C05. Images, stories and third-party material excluded.",
+            "content_hash": "7be3fbea8f8bf0b20b349c8ad742d0ac553f86e677ce9557e8de4103919f1508",
+            "accessed_at": "2026-11-17T16:03:38.088811+00:00"
+          }
+        }
+      ],
+      "supported": true,
+      "limitation": "Extractive evidence mode: quoted source text, not an LLM-generated answer. Four CISA sources are archived; this is a teaching corpus, not current security advice.",
+      "latency_ms": 17.85
+    },
+    "verification_note": "Initial system-Python urllib readiness loop failed; subsequent TLS-verified curl/httpx and hosted browser checks succeeded. No TLS verification was disabled."
+  },
+  "verified_at": "2026-11-17T16:12:56.341840+00:00",
+  "memory_after_queries": "106.9MiB / 320MiB",
+  "deployed_application_revision": "e075063cfc00ade86de22a7a93e3457daba43543",
+  "publication_method": "git archive of the recorded commit; only the amman-review2 app service recreated"
+}

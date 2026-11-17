@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Amman Singh · Backend & Software Engineering{% endblock %}</title>
+<meta name="description" content="Amman Singh, NJIT Information Technology student. Backend engineering, security-conscious APIs and evidence-grounded AI applications.">
+<link rel="stylesheet" href="/static/portfolio.css">{% block scripts %}{% endblock %}</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+<a class="identity" href="/portfolio">
+<span class="monogram" aria-hidden="true">AS.</span> Amman Singh</a>
+<nav aria-label="Main navigation">
+<a href="/portfolio#work">Work</a>
+<a href="/portfolio#about">About</a>
+<a href="/portfolio#skills">Skills</a>
+<a href="/portfolio#contact">Contact</a>
+<a class="nav-demo" href="/assistant">Knowledge Assistant ↗</a>
+</nav>
+</header>
+{% block content %}{% endblock %}
+<footer>
+<span>Amman Singh · NJIT IT · Class of 2027</span>
+<a href="https://github.com/Singh01113">GitHub ↗</a>
+<span>Learning projects, built with AI assistance and checked against source evidence.</span>
+</footer>
+</body>
+</html>

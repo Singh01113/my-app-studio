@@ -1,8 +1,11 @@
 # IS373 App Studio
 
-[**Individual Portfolio + RAG — Review 1 Plan and research-review index**](docs/projects/individual.md)
+[**Individual Portfolio + RAG — Review 1 research and Review 2 Build evidence**](docs/projects/individual.md)
 
-The individual Plan record is separate from the completed Studio application lessons below.
+Live: [portfolio](https://amman-app.134-209-120-185.sslip.io/portfolio) · [knowledge assistant](https://amman-app.134-209-120-185.sslip.io/assistant).
+The assistant performs real MiniLM vector retrieval and explicitly extractive answers;
+LLM generation remains incomplete. [Build/run/deployment setup](deploy/README.md).
+The individual project record is separate from the Studio application lessons below.
 
 **Build a small web application with an AI coach—and understand why it works.**
 Start with a working, neutral FastAPI page. Give it a brand, add accounts, then
