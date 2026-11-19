@@ -42,7 +42,7 @@ individual work. Confirm the wording against Canvas before submitting.
 <a id="portfolio-build"></a>
 ### Review 2 Build — implemented and hosted
 
-**Live URL:** [Amman Singh portfolio](https://amman-app.134-209-120-185.sslip.io/portfolio). **Repository:** [my-app-studio](https://github.com/Singh01113/my-app-studio). Publication branch: `codex/review-2-build`; application commit `e075063`. [PR #8](https://github.com/Singh01113/my-app-studio/pull/8) is open and intentionally unmerged because generation remains incomplete. [GitHub checks](https://github.com/Singh01113/my-app-studio/pull/8/checks) are running at this record update; consult their latest result before merging.
+**Live URL:** [Amman Singh portfolio](https://amman-app.134-209-120-185.sslip.io/portfolio). **Repository:** [my-app-studio](https://github.com/Singh01113/my-app-studio). Initial publication: `codex/review-2-build`, application commit `e075063`. [PR #8](https://github.com/Singh01113/my-app-studio/pull/8) was merged on November 17 as `373c55e`; its final Linux/Windows checks passed. Generation follow-up branch: `codex/review-2-generation`.
 
 Implemented a public single-page portfolio with introduction, anchored Work/About/Skills/Contact navigation, responsive project cards and a verified GitHub contact link. No resume, email, LinkedIn, employment or credential was invented. The portfolio is separate from ShiftBoard at `/`; existing account/admin routes remain intact.
 
@@ -305,17 +305,21 @@ abstain. Real generated Q1–Q5 evidence is **Pending: owner credentials and app
 
 **Changed:** Added optional source-grounded generation, response-mode labels,
 provenance validation, safe fallback, offline regression tests, and a hosted
-trace script; reused existing PR #8.
+trace script; created follow-up branch `codex/review-2-generation` after verifying PR #8 was already merged.
 
 **Checked:** `python3 studio.py check` passed Black/Pylint, 130 regression tests,
 18 lesson contracts and 3 actual Chromium journeys (151 total).
-[Exact output](../evidence/review2/generation-check-results.txt). Original import/evaluation artifacts remain unchanged. No peer or
+[Exact output](../evidence/review2/generation-check-results.txt). [Hosted follow-up traces](../evidence/review2/generation-hosted-queries.json) show
+Q1–Q4 extractive fallback with `disabled` and Q5 abstention. No generated response
+was obtained or claimed. [Deployment record](../evidence/review2/generation-deployment.json)
+confirms revision `8f4fb63`, generation disabled and five existing services preserved.
+Original import/evaluation artifacts remain unchanged. No peer or
 real-provider success is inferred from mocked tests.
 
 **Next:** Owner configures a private project API key and explicitly approves
 spending. Enable only this service, execute the five-question hosted evaluation,
 manually review every claim/citation, and record real failures and improvements.
-Keep PR #8 unmerged until the remaining requirement has been evaluated.
+The new follow-up PR should remain unmerged until the remaining requirement has been evaluated. PR #8 was merged by the owner on November 17 (verified on GitHub).
 
 #### Peer-review checklist — feedback pending
 

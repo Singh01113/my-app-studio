@@ -164,3 +164,9 @@ fallback. Existing import, vector retrieval and account/role behavior are retain
 Credentials and `RAG_GENERATION_ENABLED=1` are both required. No real provider call
 or generated evaluation is claimed until authorized and executed. Peer review is
 pending; checklist and current evidence are in the individual record.
+
+GitHub inspected November 19: PR #8 was already merged by the owner on November 17
+as `373c55e`. Generation work therefore uses `codex/review-2-generation`; a new PR
+is needed. Browser authentication is currently unavailable. The tested application
+revision `8f4fb63` was deployed with generation disabled; all five other containers
+retained their identity/start time/restart count/ports. No paid API call occurred.
