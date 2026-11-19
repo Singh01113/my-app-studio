@@ -1,4 +1,4 @@
-"""Evidence retrieval and explicitly extractive responses; no simulated LLM."""
+"""Evidence retrieval with opt-in generation and an explicit extractive fallback."""
 
 import re
 import threading
@@ -6,6 +6,7 @@ import time
 
 from app.knowledge.embedding import Embedder, MODEL_ID, MODEL_REVISION
 from app.knowledge.store import Store
+from app.knowledge import generation
 
 
 class KnowledgeService:
@@ -31,6 +32,9 @@ class KnowledgeService:
         result = {
             "mode": "extractive",
             "model": None,
+            "provider": None,
+            "generation_status": "not_attempted",
+            "fallback_reason": None,
             "embedding_model": MODEL_ID,
             "embedding_revision": MODEL_REVISION,
             "question": question,
@@ -83,5 +87,13 @@ class KnowledgeService:
                     "imported sources. I cannot answer this from this "
                     "corpus."
                 )
+        if result["supported"]:
+            try:
+                result.update(
+                    generation.generate(question, result["evidence"], self.store)
+                )
+            except generation.GenerationUnavailable as error:
+                result["generation_status"] = "unavailable"
+                result["fallback_reason"] = str(error)
         result["latency_ms"] = round((time.perf_counter() - started) * 1000, 2)
         return result

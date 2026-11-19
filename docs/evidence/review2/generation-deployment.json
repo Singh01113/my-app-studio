@@ -1,0 +1,16 @@
+{
+  "verified_at": "2026-11-19T22:14:47.256763+00:00",
+  "revision": "8f4fb63fdf972421499a8697a8a9fdab82bda6fc",
+  "previous_image": "sha256:c3fff2b72ac81f008415ab1f86fe7591c93e6fcec60a947558dd6d81da374599",
+  "image": "sha256:7de2a40f586338f2641600239bc8de17856984d4acc1c9598027392a9409b71d",
+  "generation_status": "disabled",
+  "existing_services_preserved": 5,
+  "existing_service_metadata": [
+    "\"/hosting373-site-1-1\" \"f90b1026b780ca8873f84ba02cffaeb84c34965702a7a1e5f6e692394f319d8e\" \"2026-11-04T22:17:13.328745619Z\" 0 {\"80/tcp\":null}",
+    "\"/hosting373-traefik-1\" \"5c04af4622be82a2c1f0e9f274ae89d5cb75bf8907eebb411ae7b7faee2fefee\" \"2026-11-04T22:17:13.287785574Z\" 0 {\"443/tcp\":[{\"HostIp\":\"0.0.0.0\",\"HostPort\":\"443\"},{\"HostIp\":\"::\",\"HostPort\":\"443\"}],\"80/tcp\":[{\"HostIp\":\"0.0.0.0\",\"HostPort\":\"80\"},{\"HostIp\":\"::\",\"HostPort\":\"80\"}]}",
+    "\"/is373-prod\" \"783669fb941b952a65dcff56c109fe24eeb85c1d610ff17cc218ebf6ca76b60d\" \"2026-11-04T22:17:13.321155916Z\" 0 {\"80/tcp\":null}",
+    "\"/is373-qa\" \"c041726cb06eb69382a6e05ad3cdc75eb4fc997cf789dc7b1a4e45998d96c079\" \"2026-11-04T22:17:13.31606464Z\" 0 {\"80/tcp\":null}",
+    "\"/is373-studio-calculator-calculator-1\" \"a8a696104454a5bfeaf66a2e9a9cd01dd2217217837b941e28ddc7aa367b78d9\" \"2026-11-04T22:46:18.662072714Z\" 0 {\"8000/tcp\":null}"
+  ],
+  "scope": "Only amman-review2 app rebuilt/recreated; existing environment and persistent mounts retained; no key or billing configured."
+}

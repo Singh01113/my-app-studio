@@ -1,0 +1,13 @@
+{
+  "origin": "https://amman-app.134-209-120-185.sslip.io",
+  "portfolio_http": 200,
+  "assistant_http": 200,
+  "generation_notice": "disabled",
+  "documents": 5,
+  "mobile_widths_without_overflow": [
+    390,
+    320
+  ],
+  "script_errors": [],
+  "scope": "Actual Chromium page checks; hosted query traces recorded separately."
+}

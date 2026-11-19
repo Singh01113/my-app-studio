@@ -118,6 +118,24 @@ class Store:
             ).fetchall()
         return [{**dict(row), "source": json.loads(row["metadata"])} for row in rows]
 
+    def consume_generation_budget(self):
+        """Reserve one of 20 UTC-day API attempts before network access; no refunds."""
+        now = int(time.time())
+        bucket = f"generation:{now // 86400}"
+        with self.connect() as db:
+            db.execute("BEGIN IMMEDIATE")
+            row = db.execute(
+                "SELECT count FROM budgets WHERE bucket=?", (bucket,)
+            ).fetchone()
+            if row and row[0] >= 20:
+                return False
+            db.execute(
+                "INSERT INTO budgets VALUES (?,1,?) ON CONFLICT(bucket) "
+                "DO UPDATE SET count=count+1",
+                (bucket, (now // 86400 + 1) * 86400),
+            )
+        return True
+
     def consume_budget(self, client):
         """Persistent 5/minute per client and 100/day overall, with no raw IP log."""
         now = int(time.time())

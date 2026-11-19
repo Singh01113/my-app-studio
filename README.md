@@ -4,7 +4,7 @@
 
 Live: [portfolio](https://amman-app.134-209-120-185.sslip.io/portfolio) · [knowledge assistant](https://amman-app.134-209-120-185.sslip.io/assistant).
 The assistant performs real MiniLM vector retrieval and explicitly extractive answers;
-LLM generation remains incomplete. [Build/run/deployment setup](deploy/README.md).
+OpenAI Responses generation is implemented but disabled pending credentials and explicit spending approval. [Build/run/deployment setup](deploy/README.md).
 The individual project record is separate from the Studio application lessons below.
 
 **Build a small web application with an AI coach—and understand why it works.**
