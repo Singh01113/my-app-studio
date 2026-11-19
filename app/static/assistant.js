@@ -46,14 +46,15 @@ form.addEventListener("submit", async event => {
     const data = await response.json();
     if (!response.ok) throw new Error(typeof data.detail === "string" ? data.detail : "Question could not be processed. Check its length and try again.");
     const answer = node("article", null, "answer-message");
-    answer.append(node("h3", data.supported ? "Evidence from the corpus" : "Evidence not available"), node("p", data.answer, "answer-text"));
+    answer.append(node("h3", data.supported ? (data.mode === "llm_generated" ? "Generated answer with sources" : "Evidence from the corpus") : "Evidence not available"), node("p", data.answer, "answer-text"));
     data.evidence.forEach((evidence, i) => {
       const detail = node("details");
       detail.append(node("summary", `[${i + 1}] ${evidence.source.title} · ${evidence.heading}`));
       detail.append(node("blockquote", evidence.text), sourceLink(evidence.source, "Open original source ↗"), node("p", `${evidence.source.id} · ${evidence.source.archived ? "Archived" : "NIST educational source"} · cosine ${evidence.score.toFixed(3)} · imported ${evidence.source.accessed_at.slice(0, 10)}`, "muted"));
       answer.append(detail);
     });
-    answer.append(node("p", `Extractive mode · ${Math.round(data.latency_ms)} ms · Similarity is not a correctness score.`, "muted"));
+    answer.append(node("p", `${data.mode === "llm_generated" ? "LLM-generated · " + data.model : "Extractive mode"} · ${Math.round(data.latency_ms)} ms. ${data.limitation}`, "muted"));
+    if (data.fallback_reason) answer.append(node("p", "Generation unavailable; showing retrieved excerpts. Reason: " + data.fallback_reason.replaceAll("_", " "), "muted"));
     log.append(answer); status.textContent = "Response ready. Open the source details to inspect the evidence.";
   } catch (error) { status.textContent = error.name === "AbortError" ? "Request timed out. Please try again." : error.message; }
   finally { clearTimeout(timeout); button.disabled = false; }

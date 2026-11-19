@@ -43,6 +43,8 @@ def server(tmp_path_factory):
         APP_DATABASE=str(directory / "browser.sqlite3"),
         APP_SECRET="disposable-browser-test-key-" + uuid.uuid4().hex,
         STUDIO_LIVE_RELOAD="0",
+        RAG_GENERATION_ENABLED="0",
+        OPENAI_API_KEY="",
     )
     with (directory / "server.log").open("w") as output:
         process = subprocess.Popen(

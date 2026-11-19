@@ -1,6 +1,6 @@
 **NJIT IS373 · Reviews 1–2 · Combined individual project record**
 
-**Build update — 2026-11-17:** [Live portfolio](https://amman-app.134-209-120-185.sslip.io/portfolio) and [live knowledge assistant](https://amman-app.134-209-120-185.sslip.io/assistant) return trusted HTTPS responses. The assistant uses real vector retrieval and explicitly extractive answers. **LLM generation remains incomplete.** See [portfolio Build](#portfolio-build) and [technical Build](#rag-build); the Review 1 research below is retained as historical Plan evidence. Review 2 deadline supplied by owner: November 24, 2026, 1 PM Eastern.
+**Build update — 2026-11-17:** [Live portfolio](https://amman-app.134-209-120-185.sslip.io/portfolio) and [live knowledge assistant](https://amman-app.134-209-120-185.sslip.io/assistant) return trusted HTTPS responses. The assistant uses real vector retrieval and explicitly extractive answers. **LLM generation integration is implemented but paid activation and real-provider evaluation remain pending.** See [portfolio Build](#portfolio-build) and [technical Build](#rag-build); the Review 1 research below is retained as historical Plan evidence. Review 2 deadline supplied by owner: November 24, 2026, 1 PM Eastern.
 
 Prepared 2026-11-16. Submission deadline supplied in the assignment request:
 2026-11-17, 1 PM Eastern; Canvas remains the authority. This is one evolving
@@ -256,6 +256,81 @@ checked hosted release Dec 3; improvement Dec 10, subject to Canvas.
 ## 2. Individual RAG app + technical research
 
 <a id="rag-build"></a>
+### November 19 follow-up — optional LLM generation
+
+**Status:** OpenAI Responses integration implemented; credentials, spending approval
+and real-provider evaluation remain **pending**. No live LLM-generated answer is
+claimed. The hosted assistant retains extractive answers until explicitly enabled.
+This follow-up supersedes the initial implementation status below; earlier traces
+remain historical evidence rather than generated-answer examples.
+
+**Provider/model:** OpenAI, configurable `gpt-5.6-luna` default. This is the selected
+model, not a model actually called in this task. Official documentation lists
+Responses, structured outputs and reasoning effort `none`; account access is
+unverified. The external API avoids adding a local language model to the small
+existing server. [Model/rates](https://developers.openai.com/api/docs/models/gpt-5.6-luna),
+[Responses](https://developers.openai.com/api/reference/resources/responses/methods/create),
+[structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs).
+
+**Architecture:** Existing import → 26 chunks → MiniLM → SQLite retrieval remains.
+For supported queries, an explicitly enabled adapter sends only the question and
+up to three retrieved public passages to Responses. Structured output supplies
+1–4 claims, each with passage ordinals and exact supporting quotes. The server
+rejects unknown ordinals, absent/fabricated quotes, missing citations, raw URLs,
+partial output and refusals; original links come only from stored metadata. It
+renders `llm_generated` or falls back to labeled `extractive` with a safe reason.
+A model can also return an insufficient-evidence decision. Matching quotes prove
+provenance, **not semantic entailment**; manual claim review remains required.
+
+**Security/cost:** Credentials stay in the server's private environment. A key
+alone cannot activate calls. No tools, retries, redirects, conversation history,
+account data or provider error bodies are exposed. Passages are untrusted user
+data under separate higher-priority instructions. This mitigates, but does not
+eliminate, prompt injection. Persisted 20 attempts/UTC-day, existing public limits,
+1,200 output tokens, 12 KB context, 64 KiB response cap and network timeouts bound
+usage. `store:false` is not a guarantee of zero provider retention. At documented
+rates an illustrative 2,000-input/1,200-output call is $0.00184; it is not a bill or
+hard dollar ceiling. [Exact activation and rollback instructions](../../deploy/README.md#optional-llm-generation-disabled-until-spending-is-approved).
+
+**Executed versus pending:** `tests/test_generation.py` uses explicitly synthetic
+HTTP responses with a real httpx MockTransport. It tests successful response
+parsing/citations, unknown IDs, invented quotes, missing references, unsafe URLs,
+refusal/partial/malformed output, 401/429/500/redirect errors, timeout, guarded
+unsupported questions, model abstention, disabled/missing credentials and atomic
+persistent quotas. Injection tests check containment and rejection, not actual
+model resistance. These are real executed offline tests, **not real generated
+answers**. The five-question hosted evaluation script saves actual answers and
+fails an authorized generation run if Q1–Q4 are not generated or Q5 does not
+abstain. Real generated Q1–Q5 evidence is **Pending: owner credentials and approval**.
+
+**Changed:** Added optional source-grounded generation, response-mode labels,
+provenance validation, safe fallback, offline regression tests, and a hosted
+trace script; reused existing PR #8.
+
+**Checked:** `python3 studio.py check` passed Black/Pylint, 130 regression tests,
+18 lesson contracts and 3 actual Chromium journeys (151 total).
+[Exact output](../evidence/review2/generation-check-results.txt). Original import/evaluation artifacts remain unchanged. No peer or
+real-provider success is inferred from mocked tests.
+
+**Next:** Owner configures a private project API key and explicitly approves
+spending. Enable only this service, execute the five-question hosted evaluation,
+manually review every claim/citation, and record real failures and improvements.
+Keep PR #8 unmerged until the remaining requirement has been evaluated.
+
+#### Peer-review checklist — feedback pending
+
+Ask one real classmate to try both live URLs and record their name/date only with
+permission. All answers, suggestions and resulting changes are **Pending**.
+
+- Portfolio usability: Can you identify the target role and open one project’s evidence?
+- Answer quality: Ask an MFA or phishing question and an unsupported question. Is the answer useful and appropriately limited? Record the displayed response mode.
+- Citations: Open each cited source. Does the quoted passage support the claim, and is archive status clear?
+- Mobile navigation: At phone width, can you navigate, type a question, read the answer and expand sources without horizontal scrolling?
+- Improvement: Name one specific confusing element or unsupported claim and suggest a change.
+
+Reviewer/date: **Pending.** Actual feedback: **Pending.** Change/retest following
+feedback: **Pending.** AI checks are separate from classmate observations.
+
 ### Review 2 Build — real retrieval, extractive answers
 
 **Live URL:** [Cybersecurity Knowledge Assistant](https://amman-app.134-209-120-185.sslip.io/assistant). **Repository:** [my-app-studio](https://github.com/Singh01113/my-app-studio). **Status:** hosted working import/retrieval/citation foundation; **not a completed LLM-powered RAG application**. The professor's brief requires real generation. No approved model endpoint/key was supplied, and the existing 961 MiB server had only about 443 MiB available before deployment; the proposed 1.5B local generator was not installed alongside its five services.

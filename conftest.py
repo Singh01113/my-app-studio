@@ -25,3 +25,10 @@ def client(settings):
     """Drive HTTP through the real app and isolated SQLite services."""
     with TestClient(create_app(settings), base_url=settings.origin) as browser:
         yield browser
+
+
+@pytest.fixture(autouse=True)
+def disable_paid_generation(monkeypatch):
+    """Tests never inherit a real key or authorization; mocks opt in explicitly."""
+    monkeypatch.setenv("RAG_GENERATION_ENABLED", "0")
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)

@@ -9,7 +9,7 @@
 </h1>
 <p>Explore five educational CISA and NIST documents. Every returned passage links to its original source.</p>
 <p class="notice">
-<strong>Extractive evidence mode.</strong> This version retrieves and quotes source passages; it does not use a language model to generate answers. Four CISA pages are archived and may be outdated. It cannot establish current policy or vulnerability-specific facts.</p>
+{% if generation_ready %}<strong>LLM generation enabled with extractive fallback.</strong> Questions and retrieved public passages are sent to OpenAI. Each answer identifies its actual mode. Do not submit passwords or private information.{% else %}<strong>Extractive evidence mode.</strong> LLM generation is not enabled. This version quotes source passages while credentials and spending approval are pending.{% endif %} Four CISA pages are archived and may be outdated. It cannot establish current policy or vulnerability-specific facts.</p>
 </section>
 <div class="assistant-layout">
 <section class="chat-panel" aria-labelledby="chat-heading">

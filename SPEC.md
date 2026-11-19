@@ -152,3 +152,15 @@ Full checks passed: Black/Pylint, 114 regressions, 18 earlier lesson contracts,
 checked over HTTPS. [Evidence and remaining work](docs/projects/individual.md#rag-build).
 This does not change old learning excerpts, award lesson completion, or authorize
 merging with unresolved requirements.
+
+
+### November 19 generation follow-up
+
+Owner authorized implementing and deploying an optional OpenAI Responses step,
+while expressly withholding paid activation until approval. `generation.py` uses
+configurable `gpt-5.6-luna`, structured cited claims, exact quote/ordinal checks,
+20 persisted attempts/day, 1,200 output tokens, no retries/tools and safe extractive
+fallback. Existing import, vector retrieval and account/role behavior are retained.
+Credentials and `RAG_GENERATION_ENABLED=1` are both required. No real provider call
+or generated evaluation is claimed until authorized and executed. Peer review is
+pending; checklist and current evidence are in the individual record.

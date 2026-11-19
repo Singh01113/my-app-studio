@@ -6,7 +6,7 @@ from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, ConfigDict, Field
 
 from app import security
-from app.knowledge import corpus
+from app.knowledge import corpus, generation
 
 router = APIRouter()
 
@@ -37,7 +37,9 @@ def portfolio(request: Request):
 def assistant(request: Request):
     """Render the working retrieval interface with an honest answer-mode label."""
     return request.app.state.templates.TemplateResponse(
-        request=request, name="assistant.html", context={}
+        request=request,
+        name="assistant.html",
+        context={"generation_ready": generation.configuration()[0] == "ready"},
     )
 
 
@@ -46,7 +48,7 @@ def sources(request: Request):
     """Show imported provenance; an empty index is distinguishable from a plan."""
     return {
         "sources": request.app.state.knowledge.store.sources(),
-        "mode": "extractive",
+        "generation_status": generation.configuration()[0],
     }
 
 
